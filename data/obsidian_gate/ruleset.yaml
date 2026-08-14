@@ -1,0 +1,2583 @@
+schema_version: 2
+title_ru: Обсидиановые Врата
+title_en: Obsidian Gate
+races:
+- slot: 0
+  key: virn
+  name_ru: Вирн
+  name_en: Virn
+  attributes:
+    strength: 14
+    intellect: 13
+    dexterity: 13
+    agility: 13
+    vitality: 13
+    honor: 10
+  life: 46
+  speed_bonus: 0
+  parry_bonus: 1
+  playable: true
+  summary: Люди Предела. Ни одного провального атрибута и ни одного выдающегося; единственная раса без закрытых веток развития.
+- slot: 1
+  key: silvar
+  name_ru: Сильвар
+  name_en: Silvar
+  attributes:
+    strength: 11
+    intellect: 17
+    dexterity: 15
+    agility: 15
+    vitality: 9
+    honor: 10
+  life: 38
+  speed_bonus: 6
+  parry_bonus: 2
+  playable: true
+  summary: 'Долгоживущие хранители рунного знания. Лучший разум в игре ценой худшей живучести: любая ошибка в ближнем бою
+    смертельна.'
+- slot: 2
+  key: garn
+  name_ru: Гарн
+  name_en: Garn
+  attributes:
+    strength: 20
+    intellect: 9
+    dexterity: 10
+    agility: 9
+    vitality: 19
+    honor: 10
+  life: 60
+  speed_bonus: 0
+  parry_bonus: 0
+  playable: true
+  summary: Каменнорождённые из глубинных штолен. Ходячая крепость, которая не умеет уклоняться и почти не тянет магию.
+- slot: 3
+  key: drakken
+  name_ru: Драккен
+  name_en: Drakken
+  attributes:
+    strength: 17
+    intellect: 10
+    dexterity: 11
+    agility: 14
+    vitality: 16
+    honor: 10
+  life: 52
+  speed_bonus: 5
+  parry_bonus: 1
+  playable: true
+  summary: Чешуйчатые кочевники солончаков. Редкое сочетание силы, живучести и подвижности; расплата — разум и точность.
+- slot: 4
+  key: shadu
+  name_ru: Шаду
+  name_en: Shadu
+  attributes:
+    strength: 11
+    intellect: 14
+    dexterity: 16
+    agility: 17
+    vitality: 10
+    honor: 10
+  life: 40
+  speed_bonus: 10
+  parry_bonus: 3
+  playable: true
+  summary: Порождения Врат, застрявшие между мирами. Самые быстрые и скрытные; в лобовом столкновении не выживают.
+- slot: 5
+  key: reserved_5
+  name_ru: —
+  name_en: Reserved
+  attributes:
+    strength: 10
+    intellect: 10
+    dexterity: 10
+    agility: 10
+    vitality: 10
+    honor: 10
+  life: 40
+  speed_bonus: 0
+  parry_bonus: 0
+  playable: false
+  summary: Слот движка, в игре не используется.
+- slot: 6
+  key: reserved_6
+  name_ru: —
+  name_en: Reserved
+  attributes:
+    strength: 10
+    intellect: 10
+    dexterity: 10
+    agility: 10
+    vitality: 10
+    honor: 10
+  life: 40
+  speed_bonus: 0
+  parry_bonus: 0
+  playable: false
+  summary: Слот движка, в игре не используется.
+- slot: 7
+  key: reserved_7
+  name_ru: —
+  name_en: Reserved
+  attributes:
+    strength: 10
+    intellect: 10
+    dexterity: 10
+    agility: 10
+    vitality: 10
+    honor: 10
+  life: 40
+  speed_bonus: 0
+  parry_bonus: 0
+  playable: false
+  summary: Слот движка, в игре не используется.
+- slot: 8
+  key: reserved_8
+  name_ru: —
+  name_en: Reserved
+  attributes:
+    strength: 10
+    intellect: 10
+    dexterity: 10
+    agility: 10
+    vitality: 10
+    honor: 10
+  life: 40
+  speed_bonus: 0
+  parry_bonus: 0
+  playable: false
+  summary: Слот движка, в игре не используется.
+- slot: 9
+  key: reserved_9
+  name_ru: —
+  name_en: Reserved
+  attributes:
+    strength: 10
+    intellect: 10
+    dexterity: 10
+    agility: 10
+    vitality: 10
+    honor: 10
+  life: 40
+  speed_bonus: 0
+  parry_bonus: 0
+  playable: false
+  summary: Слот движка, в игре не используется.
+- slot: 10
+  key: reserved_10
+  name_ru: —
+  name_en: Reserved
+  attributes:
+    strength: 10
+    intellect: 10
+    dexterity: 10
+    agility: 10
+    vitality: 10
+    honor: 10
+  life: 40
+  speed_bonus: 0
+  parry_bonus: 0
+  playable: false
+  summary: Слот движка, в игре не используется.
+- slot: 11
+  key: reserved_11
+  name_ru: —
+  name_en: Reserved
+  attributes:
+    strength: 10
+    intellect: 10
+    dexterity: 10
+    agility: 10
+    vitality: 10
+    honor: 10
+  life: 40
+  speed_bonus: 0
+  parry_bonus: 0
+  playable: false
+  summary: Слот движка, в игре не используется.
+- slot: 12
+  key: reserved_12
+  name_ru: —
+  name_en: Reserved
+  attributes:
+    strength: 10
+    intellect: 10
+    dexterity: 10
+    agility: 10
+    vitality: 10
+    honor: 10
+  life: 40
+  speed_bonus: 0
+  parry_bonus: 0
+  playable: false
+  summary: Слот движка, в игре не используется.
+- slot: 13
+  key: reserved_13
+  name_ru: —
+  name_en: Reserved
+  attributes:
+    strength: 10
+    intellect: 10
+    dexterity: 10
+    agility: 10
+    vitality: 10
+    honor: 10
+  life: 40
+  speed_bonus: 0
+  parry_bonus: 0
+  playable: false
+  summary: Слот движка, в игре не используется.
+- slot: 14
+  key: reserved_14
+  name_ru: —
+  name_en: Reserved
+  attributes:
+    strength: 10
+    intellect: 10
+    dexterity: 10
+    agility: 10
+    vitality: 10
+    honor: 10
+  life: 40
+  speed_bonus: 0
+  parry_bonus: 0
+  playable: false
+  summary: Слот движка, в игре не используется.
+- slot: 15
+  key: reserved_15
+  name_ru: —
+  name_en: Reserved
+  attributes:
+    strength: 10
+    intellect: 10
+    dexterity: 10
+    agility: 10
+    vitality: 10
+    honor: 10
+  life: 40
+  speed_bonus: 0
+  parry_bonus: 0
+  playable: false
+  summary: Слот движка, в игре не используется.
+skills:
+- slot: 0
+  key: brawl
+  name_ru: Рукопашный бой
+  group: melee
+  engine_behaviour: безоружный урон
+  requires: []
+- slot: 1
+  key: forms
+  name_ru: Боевые формы
+  group: melee
+  engine_behaviour: продвинутый безоружный бой
+  requires:
+  - brawl
+- slot: 2
+  key: light_blade
+  name_ru: Лёгкие клинки
+  group: melee
+  engine_behaviour: кинжалы, короткие мечи
+  requires: []
+- slot: 3
+  key: medium_blade
+  name_ru: Средние клинки
+  group: melee
+  engine_behaviour: мечи, топоры, булавы
+  requires: []
+- slot: 4
+  key: heavy_arms
+  name_ru: Тяжёлое оружие
+  group: melee
+  engine_behaviour: двуручное оружие
+  requires: []
+- slot: 5
+  key: light_pole
+  name_ru: Лёгкое древковое
+  group: melee
+  engine_behaviour: копья, посохи
+  requires: []
+- slot: 6
+  key: heavy_pole
+  name_ru: Тяжёлое древковое
+  group: melee
+  engine_behaviour: алебарды, глефы
+  requires: []
+- slot: 7
+  key: dual_light
+  name_ru: Парные лёгкие
+  group: melee
+  engine_behaviour: два лёгких оружия
+  requires:
+  - light_blade
+- slot: 8
+  key: dual_medium
+  name_ru: Парные средние
+  group: melee
+  engine_behaviour: два средних оружия
+  requires:
+  - medium_blade
+- slot: 9
+  key: throwing
+  name_ru: Метательное
+  group: ranged
+  engine_behaviour: ножи, дротики, сюрикены
+  requires: []
+- slot: 10
+  key: archery
+  name_ru: Стрельба
+  group: ranged
+  engine_behaviour: луки и арбалеты
+  requires: []
+- slot: 11
+  key: parry
+  name_ru: Парирование
+  group: defense
+  engine_behaviour: шанс отбить удар
+  requires: []
+- slot: 12
+  key: light_armor
+  name_ru: Лёгкий доспех
+  group: defense
+  engine_behaviour: снимает штраф лёгкой брони
+  requires: []
+- slot: 13
+  key: medium_armor
+  name_ru: Средний доспех
+  group: defense
+  engine_behaviour: снимает штраф средней брони
+  requires: []
+- slot: 14
+  key: heavy_armor
+  name_ru: Тяжёлый доспех
+  group: defense
+  engine_behaviour: снимает штраф тяжёлой брони
+  requires: []
+- slot: 15
+  key: light_shield
+  name_ru: Лёгкий щит
+  group: defense
+  engine_behaviour: блок лёгким щитом
+  requires: []
+- slot: 16
+  key: medium_shield
+  name_ru: Средний щит
+  group: defense
+  engine_behaviour: блок средним щитом
+  requires: []
+- slot: 17
+  key: heavy_shield
+  name_ru: Тяжёлый щит
+  group: defense
+  engine_behaviour: блок тяжёлым щитом
+  requires: []
+- slot: 18
+  key: athletics
+  name_ru: Атлетика
+  group: movement
+  engine_behaviour: прыжки, перекаты, скорость
+  requires: []
+- slot: 19
+  key: pathfinding
+  name_ru: Следопытство
+  group: movement
+  engine_behaviour: обнаружение и ориентирование
+  requires: []
+- slot: 20
+  key: barter
+  name_ru: Торг
+  group: craft
+  engine_behaviour: цены у торговцев
+  requires: []
+- slot: 21
+  key: repair
+  name_ru: Починка
+  group: craft
+  engine_behaviour: восстановление прочности
+  requires: []
+- slot: 22
+  key: resolve
+  name_ru: Стойкость
+  group: defense
+  engine_behaviour: сопротивление контролю
+  requires: []
+- slot: 23
+  key: lockpick
+  name_ru: Взлом
+  group: larceny
+  engine_behaviour: замки
+  requires:
+  - perception
+- slot: 24
+  key: perception
+  name_ru: Наблюдательность
+  group: larceny
+  engine_behaviour: обнаружение скрытого
+  requires: []
+- slot: 25
+  key: disarm
+  name_ru: Обезвреживание
+  group: larceny
+  engine_behaviour: ловушки
+  requires:
+  - perception
+- slot: 26
+  key: stealth
+  name_ru: Скрытность
+  group: larceny
+  engine_behaviour: незаметность
+  requires: []
+- slot: 27
+  key: pickpocket
+  name_ru: Карманник
+  group: larceny
+  engine_behaviour: кража у NPC
+  requires:
+  - stealth
+- slot: 28
+  key: identify
+  name_ru: Опознание
+  group: craft
+  engine_behaviour: определение свойств предметов
+  requires: []
+- slot: 29
+  key: shadowstrike
+  name_ru: Удар из тени
+  group: melee
+  engine_behaviour: атака из скрытности
+  requires:
+  - stealth
+- slot: 30
+  key: ash_magic
+  name_ru: Магия Праха
+  group: magic
+  engine_behaviour: 'школа Праха: урон и стихии'
+  requires: []
+- slot: 31
+  key: dawn_magic
+  name_ru: Магия Зари
+  group: magic
+  engine_behaviour: 'школа Зари: лечение и защита'
+  requires: []
+- slot: 32
+  key: abyss_magic
+  name_ru: Магия Бездны
+  group: magic
+  engine_behaviour: 'школа Бездны: проклятия'
+  requires: []
+- slot: 33
+  key: rune_magic
+  name_ru: Магия Рун
+  group: magic
+  engine_behaviour: 'школа Рун: врата и печати'
+  requires: []
+- slot: 34
+  key: enchant
+  name_ru: Зачарование оружия
+  group: magic
+  engine_behaviour: магический урон оружием
+  requires:
+  - light_blade
+- slot: 35
+  key: scribe
+  name_ru: Начертание
+  group: craft
+  engine_behaviour: запись свитков
+  requires:
+  - ash_magic
+- slot: 36
+  key: conduit
+  name_ru: Проводник
+  group: magic
+  engine_behaviour: восстановление кристаллов
+  requires:
+  - dawn_magic
+- slot: 37
+  key: alchemy
+  name_ru: Алхимия
+  group: craft
+  engine_behaviour: смеси и катализаторы
+  requires:
+  - abyss_magic
+- slot: 38
+  key: rend
+  name_ru: Рваные раны
+  group: passive
+  engine_behaviour: кровотечение
+  requires: []
+- slot: 39
+  key: crush
+  name_ru: Сокрушение
+  group: passive
+  engine_behaviour: оглушающий удар
+  requires: []
+- slot: 40
+  key: precision
+  name_ru: Точный удар
+  group: passive
+  engine_behaviour: критический урон
+  requires: []
+- slot: 41
+  key: hawkeye
+  name_ru: Соколиный глаз
+  group: passive
+  engine_behaviour: точность дальнего боя
+  requires: []
+- slot: 42
+  key: spellfire
+  name_ru: Пламя чар
+  group: passive
+  engine_behaviour: усиление заклинаний
+  requires: []
+- slot: 43
+  key: bloodletting
+  name_ru: Кровопийство
+  group: passive
+  engine_behaviour: вампиризм
+  requires: []
+- slot: 44
+  key: obsidian_hand
+  name_ru: Обсидиановая длань
+  group: passive
+  engine_behaviour: сигнатурный навык скрытого класса
+  requires: []
+classes:
+- key: none
+  slot: 0
+  name_ru: Нет класса
+  name_en: None
+  tier: none
+  guild: ''
+  parent: null
+  required_level: 1
+  quest_register: null
+  requirements: {}
+  skills: []
+- key: blade
+  slot: 1
+  name_ru: Клинок
+  name_en: Blade
+  tier: base
+  guild: steel
+  parent: null
+  required_level: 1
+  quest_register: null
+  requirements: {}
+  skills:
+  - skill: athletics
+    cap: 4
+    unlock_tier: base
+  - skill: crush
+    cap: 3
+    unlock_tier: base
+  - skill: heavy_armor
+    cap: 4
+    unlock_tier: base
+  - skill: heavy_arms
+    cap: 5
+    unlock_tier: base
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 4
+    unlock_tier: base
+  - skill: light_shield
+    cap: 5
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 5
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 5
+    unlock_tier: base
+  - skill: medium_shield
+    cap: 4
+    unlock_tier: base
+  - skill: parry
+    cap: 5
+    unlock_tier: base
+  - skill: precision
+    cap: 3
+    unlock_tier: base
+  - skill: repair
+    cap: 3
+    unlock_tier: base
+  - skill: resolve
+    cap: 4
+    unlock_tier: base
+- key: weaver
+  slot: 2
+  name_ru: Ткач
+  name_en: Weaver
+  tier: base
+  guild: ash
+  parent: null
+  required_level: 1
+  quest_register: null
+  requirements: {}
+  skills:
+  - skill: abyss_magic
+    cap: 4
+    unlock_tier: base
+  - skill: alchemy
+    cap: 3
+    unlock_tier: base
+  - skill: ash_magic
+    cap: 5
+    unlock_tier: base
+  - skill: athletics
+    cap: 3
+    unlock_tier: base
+  - skill: enchant
+    cap: 4
+    unlock_tier: base
+  - skill: identify
+    cap: 5
+    unlock_tier: base
+  - skill: light_armor
+    cap: 3
+    unlock_tier: base
+  - skill: light_blade
+    cap: 3
+    unlock_tier: base
+  - skill: resolve
+    cap: 3
+    unlock_tier: base
+  - skill: rune_magic
+    cap: 3
+    unlock_tier: base
+  - skill: scribe
+    cap: 5
+    unlock_tier: base
+  - skill: spellfire
+    cap: 4
+    unlock_tier: base
+- key: warden
+  slot: 3
+  name_ru: Хранитель
+  name_en: Warden
+  tier: base
+  guild: dawn
+  parent: null
+  required_level: 1
+  quest_register: null
+  requirements: {}
+  skills:
+  - skill: athletics
+    cap: 3
+    unlock_tier: base
+  - skill: conduit
+    cap: 5
+    unlock_tier: base
+  - skill: dawn_magic
+    cap: 5
+    unlock_tier: base
+  - skill: identify
+    cap: 4
+    unlock_tier: base
+  - skill: light_pole
+    cap: 3
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 4
+    unlock_tier: base
+  - skill: medium_shield
+    cap: 4
+    unlock_tier: base
+  - skill: parry
+    cap: 4
+    unlock_tier: base
+  - skill: resolve
+    cap: 5
+    unlock_tier: base
+  - skill: rune_magic
+    cap: 4
+    unlock_tier: base
+  - skill: spellfire
+    cap: 3
+    unlock_tier: base
+- key: shade
+  slot: 4
+  name_ru: Тень
+  name_en: Shade
+  tier: base
+  guild: dusk
+  parent: null
+  required_level: 1
+  quest_register: null
+  requirements: {}
+  skills:
+  - skill: archery
+    cap: 4
+    unlock_tier: base
+  - skill: athletics
+    cap: 5
+    unlock_tier: base
+  - skill: barter
+    cap: 4
+    unlock_tier: base
+  - skill: disarm
+    cap: 5
+    unlock_tier: base
+  - skill: dual_light
+    cap: 5
+    unlock_tier: base
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 5
+    unlock_tier: base
+  - skill: lockpick
+    cap: 5
+    unlock_tier: base
+  - skill: perception
+    cap: 5
+    unlock_tier: base
+  - skill: pickpocket
+    cap: 5
+    unlock_tier: base
+  - skill: precision
+    cap: 4
+    unlock_tier: base
+  - skill: shadowstrike
+    cap: 5
+    unlock_tier: base
+  - skill: stealth
+    cap: 5
+    unlock_tier: base
+  - skill: throwing
+    cap: 5
+    unlock_tier: base
+- key: bulwark
+  slot: 5
+  name_ru: Латник
+  name_en: Bulwark
+  tier: specialist
+  guild: steel
+  parent: blade
+  required_level: 6
+  quest_register: QUEST_BULWARK
+  requirements:
+    strength: 25
+    intellect: 20
+    dexterity: 20
+    vitality: 22
+  skills:
+  - skill: athletics
+    cap: 4
+    unlock_tier: base
+  - skill: crush
+    cap: 3
+    unlock_tier: base
+  - skill: heavy_armor
+    cap: 8
+    unlock_tier: specialist
+  - skill: heavy_arms
+    cap: 5
+    unlock_tier: base
+  - skill: heavy_shield
+    cap: 8
+    unlock_tier: specialist
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 4
+    unlock_tier: base
+  - skill: light_shield
+    cap: 5
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 5
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 7
+    unlock_tier: specialist
+  - skill: medium_shield
+    cap: 4
+    unlock_tier: base
+  - skill: parry
+    cap: 8
+    unlock_tier: specialist
+  - skill: precision
+    cap: 3
+    unlock_tier: base
+  - skill: repair
+    cap: 3
+    unlock_tier: base
+  - skill: resolve
+    cap: 7
+    unlock_tier: specialist
+- key: reaver
+  slot: 6
+  name_ru: Хищник
+  name_en: Reaver
+  tier: specialist
+  guild: steel
+  parent: blade
+  required_level: 6
+  quest_register: QUEST_REAVER
+  requirements:
+    strength: 25
+    intellect: 15
+    dexterity: 25
+    agility: 20
+  skills:
+  - skill: athletics
+    cap: 4
+    unlock_tier: base
+  - skill: crush
+    cap: 7
+    unlock_tier: specialist
+  - skill: dual_medium
+    cap: 7
+    unlock_tier: specialist
+  - skill: heavy_armor
+    cap: 4
+    unlock_tier: base
+  - skill: heavy_arms
+    cap: 8
+    unlock_tier: specialist
+  - skill: light_armor
+    cap: 7
+    unlock_tier: specialist
+  - skill: light_blade
+    cap: 4
+    unlock_tier: base
+  - skill: light_shield
+    cap: 5
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 5
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 6
+    unlock_tier: base
+  - skill: medium_shield
+    cap: 4
+    unlock_tier: base
+  - skill: parry
+    cap: 5
+    unlock_tier: base
+  - skill: precision
+    cap: 3
+    unlock_tier: base
+  - skill: rend
+    cap: 7
+    unlock_tier: specialist
+  - skill: repair
+    cap: 3
+    unlock_tier: base
+  - skill: resolve
+    cap: 4
+    unlock_tier: base
+- key: pyromancer
+  slot: 7
+  name_ru: Пиромант
+  name_en: Pyromancer
+  tier: specialist
+  guild: ash
+  parent: weaver
+  required_level: 6
+  quest_register: QUEST_PYROMANCER
+  requirements:
+    strength: 15
+    intellect: 30
+    dexterity: 25
+  skills:
+  - skill: abyss_magic
+    cap: 4
+    unlock_tier: base
+  - skill: alchemy
+    cap: 3
+    unlock_tier: base
+  - skill: ash_magic
+    cap: 8
+    unlock_tier: specialist
+  - skill: athletics
+    cap: 3
+    unlock_tier: base
+  - skill: enchant
+    cap: 4
+    unlock_tier: base
+  - skill: identify
+    cap: 7
+    unlock_tier: specialist
+  - skill: light_armor
+    cap: 3
+    unlock_tier: base
+  - skill: light_blade
+    cap: 3
+    unlock_tier: base
+  - skill: resolve
+    cap: 3
+    unlock_tier: base
+  - skill: rune_magic
+    cap: 3
+    unlock_tier: base
+  - skill: scribe
+    cap: 7
+    unlock_tier: specialist
+  - skill: spellfire
+    cap: 8
+    unlock_tier: specialist
+- key: war_weaver
+  slot: 8
+  name_ru: Боевой ткач
+  name_en: War Weaver
+  tier: specialist
+  guild: ash
+  parent: weaver
+  required_level: 6
+  quest_register: QUEST_WARWEAVER
+  requirements:
+    strength: 20
+    intellect: 25
+    dexterity: 25
+  skills:
+  - skill: abyss_magic
+    cap: 4
+    unlock_tier: base
+  - skill: alchemy
+    cap: 3
+    unlock_tier: base
+  - skill: ash_magic
+    cap: 7
+    unlock_tier: specialist
+  - skill: athletics
+    cap: 3
+    unlock_tier: base
+  - skill: enchant
+    cap: 8
+    unlock_tier: specialist
+  - skill: identify
+    cap: 5
+    unlock_tier: base
+  - skill: light_armor
+    cap: 3
+    unlock_tier: base
+  - skill: light_blade
+    cap: 3
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 6
+    unlock_tier: specialist
+  - skill: medium_blade
+    cap: 7
+    unlock_tier: specialist
+  - skill: parry
+    cap: 6
+    unlock_tier: specialist
+  - skill: resolve
+    cap: 3
+    unlock_tier: base
+  - skill: rune_magic
+    cap: 3
+    unlock_tier: base
+  - skill: scribe
+    cap: 5
+    unlock_tier: base
+  - skill: spellfire
+    cap: 4
+    unlock_tier: base
+- key: lightbearer
+  slot: 9
+  name_ru: Светоносец
+  name_en: Lightbearer
+  tier: specialist
+  guild: dawn
+  parent: warden
+  required_level: 6
+  quest_register: QUEST_LIGHTBEARER
+  requirements:
+    strength: 20
+    intellect: 25
+    dexterity: 20
+  skills:
+  - skill: athletics
+    cap: 3
+    unlock_tier: base
+  - skill: conduit
+    cap: 8
+    unlock_tier: specialist
+  - skill: dawn_magic
+    cap: 8
+    unlock_tier: specialist
+  - skill: identify
+    cap: 7
+    unlock_tier: specialist
+  - skill: light_pole
+    cap: 3
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 4
+    unlock_tier: base
+  - skill: medium_shield
+    cap: 4
+    unlock_tier: base
+  - skill: parry
+    cap: 4
+    unlock_tier: base
+  - skill: resolve
+    cap: 7
+    unlock_tier: specialist
+  - skill: rune_magic
+    cap: 4
+    unlock_tier: base
+  - skill: spellfire
+    cap: 3
+    unlock_tier: base
+- key: faithshield
+  slot: 10
+  name_ru: Щит Веры
+  name_en: Faithshield
+  tier: specialist
+  guild: dawn
+  parent: warden
+  required_level: 6
+  quest_register: QUEST_FAITHSHIELD
+  requirements:
+    strength: 25
+    intellect: 25
+    dexterity: 20
+    vitality: 20
+  skills:
+  - skill: athletics
+    cap: 3
+    unlock_tier: base
+  - skill: conduit
+    cap: 5
+    unlock_tier: base
+  - skill: dawn_magic
+    cap: 7
+    unlock_tier: specialist
+  - skill: heavy_armor
+    cap: 7
+    unlock_tier: specialist
+  - skill: heavy_shield
+    cap: 8
+    unlock_tier: specialist
+  - skill: identify
+    cap: 4
+    unlock_tier: base
+  - skill: light_pole
+    cap: 3
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 4
+    unlock_tier: base
+  - skill: medium_shield
+    cap: 4
+    unlock_tier: base
+  - skill: parry
+    cap: 7
+    unlock_tier: specialist
+  - skill: resolve
+    cap: 8
+    unlock_tier: specialist
+  - skill: rune_magic
+    cap: 4
+    unlock_tier: base
+  - skill: spellfire
+    cap: 3
+    unlock_tier: base
+- key: stalker
+  slot: 11
+  name_ru: Ловчий
+  name_en: Stalker
+  tier: specialist
+  guild: dusk
+  parent: shade
+  required_level: 6
+  quest_register: QUEST_STALKER
+  requirements:
+    strength: 20
+    intellect: 25
+    dexterity: 25
+    agility: 22
+  skills:
+  - skill: archery
+    cap: 8
+    unlock_tier: specialist
+  - skill: athletics
+    cap: 5
+    unlock_tier: base
+  - skill: barter
+    cap: 4
+    unlock_tier: base
+  - skill: disarm
+    cap: 5
+    unlock_tier: base
+  - skill: dual_light
+    cap: 5
+    unlock_tier: base
+  - skill: hawkeye
+    cap: 8
+    unlock_tier: specialist
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 6
+    unlock_tier: base
+  - skill: lockpick
+    cap: 6
+    unlock_tier: base
+  - skill: pathfinding
+    cap: 8
+    unlock_tier: specialist
+  - skill: perception
+    cap: 6
+    unlock_tier: base
+  - skill: pickpocket
+    cap: 5
+    unlock_tier: base
+  - skill: precision
+    cap: 4
+    unlock_tier: base
+  - skill: shadowstrike
+    cap: 5
+    unlock_tier: base
+  - skill: stealth
+    cap: 7
+    unlock_tier: specialist
+  - skill: throwing
+    cap: 7
+    unlock_tier: specialist
+- key: beguiler
+  slot: 12
+  name_ru: Плут
+  name_en: Beguiler
+  tier: specialist
+  guild: dusk
+  parent: shade
+  required_level: 6
+  quest_register: QUEST_BEGUILER
+  requirements:
+    strength: 15
+    intellect: 30
+    dexterity: 25
+  skills:
+  - skill: archery
+    cap: 4
+    unlock_tier: base
+  - skill: athletics
+    cap: 5
+    unlock_tier: base
+  - skill: barter
+    cap: 8
+    unlock_tier: specialist
+  - skill: disarm
+    cap: 8
+    unlock_tier: specialist
+  - skill: dual_light
+    cap: 5
+    unlock_tier: base
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 6
+    unlock_tier: base
+  - skill: lockpick
+    cap: 8
+    unlock_tier: specialist
+  - skill: perception
+    cap: 8
+    unlock_tier: specialist
+  - skill: pickpocket
+    cap: 8
+    unlock_tier: specialist
+  - skill: precision
+    cap: 4
+    unlock_tier: base
+  - skill: shadowstrike
+    cap: 5
+    unlock_tier: base
+  - skill: stealth
+    cap: 6
+    unlock_tier: base
+  - skill: throwing
+    cap: 5
+    unlock_tier: base
+- key: storm_blade
+  slot: 13
+  name_ru: Мечник Бури
+  name_en: Storm Blade
+  tier: specialist
+  guild: storm
+  parent: blade
+  required_level: 6
+  quest_register: QUEST_STORMBLADE
+  requirements:
+    strength: 20
+    intellect: 20
+    dexterity: 25
+  skills:
+  - skill: athletics
+    cap: 6
+    unlock_tier: base
+  - skill: brawl
+    cap: 5
+    unlock_tier: base
+  - skill: dual_medium
+    cap: 8
+    unlock_tier: specialist
+  - skill: forms
+    cap: 4
+    unlock_tier: base
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 5
+    unlock_tier: base
+  - skill: light_pole
+    cap: 5
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 8
+    unlock_tier: specialist
+  - skill: parry
+    cap: 8
+    unlock_tier: specialist
+  - skill: precision
+    cap: 7
+    unlock_tier: specialist
+  - skill: resolve
+    cap: 5
+    unlock_tier: base
+- key: guardsman
+  slot: 14
+  name_ru: Гвардеец
+  name_en: Guardsman
+  tier: specialist
+  guild: storm
+  parent: blade
+  required_level: 6
+  quest_register: QUEST_GUARDSMAN
+  requirements:
+    strength: 25
+    intellect: 20
+    dexterity: 20
+  skills:
+  - skill: athletics
+    cap: 6
+    unlock_tier: base
+  - skill: brawl
+    cap: 5
+    unlock_tier: base
+  - skill: dual_medium
+    cap: 5
+    unlock_tier: base
+  - skill: forms
+    cap: 4
+    unlock_tier: base
+  - skill: heavy_pole
+    cap: 7
+    unlock_tier: specialist
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 5
+    unlock_tier: base
+  - skill: light_pole
+    cap: 8
+    unlock_tier: specialist
+  - skill: medium_armor
+    cap: 8
+    unlock_tier: specialist
+  - skill: medium_blade
+    cap: 6
+    unlock_tier: base
+  - skill: medium_shield
+    cap: 7
+    unlock_tier: specialist
+  - skill: parry
+    cap: 6
+    unlock_tier: base
+  - skill: precision
+    cap: 4
+    unlock_tier: base
+  - skill: resolve
+    cap: 7
+    unlock_tier: specialist
+- key: storm_caller
+  slot: 15
+  name_ru: Заклинатель Бури
+  name_en: Storm Caller
+  tier: specialist
+  guild: storm
+  parent: weaver
+  required_level: 6
+  quest_register: QUEST_STORMCALLER
+  requirements:
+    strength: 15
+    intellect: 25
+    dexterity: 25
+  skills:
+  - skill: ash_magic
+    cap: 8
+    unlock_tier: specialist
+  - skill: athletics
+    cap: 7
+    unlock_tier: specialist
+  - skill: brawl
+    cap: 5
+    unlock_tier: base
+  - skill: dual_medium
+    cap: 5
+    unlock_tier: base
+  - skill: enchant
+    cap: 7
+    unlock_tier: specialist
+  - skill: forms
+    cap: 4
+    unlock_tier: base
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 5
+    unlock_tier: base
+  - skill: light_pole
+    cap: 5
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 6
+    unlock_tier: specialist
+  - skill: parry
+    cap: 6
+    unlock_tier: base
+  - skill: precision
+    cap: 4
+    unlock_tier: base
+  - skill: resolve
+    cap: 5
+    unlock_tier: base
+  - skill: spellfire
+    cap: 7
+    unlock_tier: specialist
+- key: ascetic
+  slot: 16
+  name_ru: Аскет
+  name_en: Ascetic
+  tier: specialist
+  guild: storm
+  parent: warden
+  required_level: 6
+  quest_register: QUEST_ASCETIC
+  requirements:
+    strength: 20
+    intellect: 20
+    dexterity: 25
+  skills:
+  - skill: athletics
+    cap: 8
+    unlock_tier: specialist
+  - skill: brawl
+    cap: 8
+    unlock_tier: specialist
+  - skill: dawn_magic
+    cap: 5
+    unlock_tier: specialist
+  - skill: dual_medium
+    cap: 5
+    unlock_tier: base
+  - skill: forms
+    cap: 8
+    unlock_tier: specialist
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 5
+    unlock_tier: base
+  - skill: light_pole
+    cap: 5
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 6
+    unlock_tier: base
+  - skill: parry
+    cap: 6
+    unlock_tier: base
+  - skill: precision
+    cap: 4
+    unlock_tier: base
+  - skill: resolve
+    cap: 8
+    unlock_tier: specialist
+- key: duelist
+  slot: 17
+  name_ru: Дуэлянт
+  name_en: Duelist
+  tier: specialist
+  guild: storm
+  parent: shade
+  required_level: 6
+  quest_register: QUEST_DUELIST
+  requirements:
+    strength: 25
+    intellect: 15
+    dexterity: 25
+    agility: 22
+  skills:
+  - skill: athletics
+    cap: 8
+    unlock_tier: specialist
+  - skill: brawl
+    cap: 5
+    unlock_tier: base
+  - skill: dual_light
+    cap: 8
+    unlock_tier: specialist
+  - skill: dual_medium
+    cap: 5
+    unlock_tier: base
+  - skill: forms
+    cap: 4
+    unlock_tier: base
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 8
+    unlock_tier: specialist
+  - skill: light_pole
+    cap: 5
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 6
+    unlock_tier: base
+  - skill: parry
+    cap: 8
+    unlock_tier: specialist
+  - skill: precision
+    cap: 7
+    unlock_tier: specialist
+  - skill: resolve
+    cap: 5
+    unlock_tier: base
+- key: ashlance
+  slot: 18
+  name_ru: Копейщица Пепла
+  name_en: Ashlance
+  tier: specialist
+  guild: sisters
+  parent: blade
+  required_level: 6
+  quest_register: QUEST_ASHLANCE
+  requirements:
+    strength: 25
+    intellect: 25
+    dexterity: 25
+  skills:
+  - skill: abyss_magic
+    cap: 4
+    unlock_tier: base
+  - skill: athletics
+    cap: 5
+    unlock_tier: base
+  - skill: dawn_magic
+    cap: 4
+    unlock_tier: base
+  - skill: enchant
+    cap: 6
+    unlock_tier: specialist
+  - skill: heavy_pole
+    cap: 8
+    unlock_tier: specialist
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_pole
+    cap: 8
+    unlock_tier: specialist
+  - skill: medium_armor
+    cap: 7
+    unlock_tier: specialist
+  - skill: medium_blade
+    cap: 5
+    unlock_tier: base
+  - skill: parry
+    cap: 7
+    unlock_tier: specialist
+  - skill: resolve
+    cap: 5
+    unlock_tier: base
+  - skill: spellfire
+    cap: 4
+    unlock_tier: base
+  - skill: throwing
+    cap: 4
+    unlock_tier: base
+- key: charmweaver
+  slot: 19
+  name_ru: Чаровница
+  name_en: Charmweaver
+  tier: specialist
+  guild: sisters
+  parent: weaver
+  required_level: 6
+  quest_register: QUEST_CHARMWEAVER
+  requirements:
+    strength: 20
+    intellect: 30
+    dexterity: 20
+  skills:
+  - skill: abyss_magic
+    cap: 8
+    unlock_tier: specialist
+  - skill: athletics
+    cap: 5
+    unlock_tier: base
+  - skill: dawn_magic
+    cap: 7
+    unlock_tier: specialist
+  - skill: enchant
+    cap: 8
+    unlock_tier: specialist
+  - skill: identify
+    cap: 7
+    unlock_tier: specialist
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_pole
+    cap: 6
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 5
+    unlock_tier: base
+  - skill: parry
+    cap: 5
+    unlock_tier: base
+  - skill: resolve
+    cap: 5
+    unlock_tier: base
+  - skill: spellfire
+    cap: 7
+    unlock_tier: specialist
+  - skill: throwing
+    cap: 4
+    unlock_tier: base
+- key: steel_lord
+  slot: 20
+  name_ru: Владыка Стали
+  name_en: Steel Lord
+  tier: elite
+  guild: steel
+  parent: bulwark
+  required_level: 16
+  quest_register: QUEST_STEELLORD
+  requirements:
+    strength: 40
+    intellect: 30
+    dexterity: 35
+    vitality: 35
+  skills:
+  - skill: athletics
+    cap: 4
+    unlock_tier: base
+  - skill: crush
+    cap: 8
+    unlock_tier: elite
+  - skill: heavy_armor
+    cap: 10
+    unlock_tier: elite
+  - skill: heavy_arms
+    cap: 5
+    unlock_tier: base
+  - skill: heavy_shield
+    cap: 10
+    unlock_tier: elite
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 4
+    unlock_tier: base
+  - skill: light_shield
+    cap: 5
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 5
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 9
+    unlock_tier: elite
+  - skill: medium_shield
+    cap: 4
+    unlock_tier: base
+  - skill: parry
+    cap: 10
+    unlock_tier: elite
+  - skill: precision
+    cap: 3
+    unlock_tier: base
+  - skill: repair
+    cap: 3
+    unlock_tier: base
+  - skill: resolve
+    cap: 9
+    unlock_tier: elite
+- key: bone_lord
+  slot: 21
+  name_ru: Костяной Владыка
+  name_en: Bone Lord
+  tier: elite
+  guild: steel
+  parent: reaver
+  required_level: 16
+  quest_register: QUEST_BONELORD
+  requirements:
+    strength: 45
+    intellect: 30
+    dexterity: 35
+  skills:
+  - skill: abyss_magic
+    cap: 7
+    unlock_tier: elite
+  - skill: athletics
+    cap: 4
+    unlock_tier: base
+  - skill: bloodletting
+    cap: 9
+    unlock_tier: elite
+  - skill: crush
+    cap: 9
+    unlock_tier: elite
+  - skill: heavy_armor
+    cap: 4
+    unlock_tier: base
+  - skill: heavy_arms
+    cap: 10
+    unlock_tier: elite
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 4
+    unlock_tier: base
+  - skill: light_shield
+    cap: 5
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 5
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 6
+    unlock_tier: base
+  - skill: medium_shield
+    cap: 4
+    unlock_tier: base
+  - skill: parry
+    cap: 5
+    unlock_tier: base
+  - skill: precision
+    cap: 3
+    unlock_tier: base
+  - skill: rend
+    cap: 10
+    unlock_tier: elite
+  - skill: repair
+    cap: 3
+    unlock_tier: base
+  - skill: resolve
+    cap: 4
+    unlock_tier: base
+- key: archweaver
+  slot: 22
+  name_ru: Архиткач
+  name_en: Archweaver
+  tier: elite
+  guild: ash
+  parent: pyromancer
+  required_level: 16
+  quest_register: QUEST_ARCHWEAVER
+  requirements:
+    strength: 30
+    intellect: 45
+    dexterity: 40
+  skills:
+  - skill: abyss_magic
+    cap: 4
+    unlock_tier: base
+  - skill: alchemy
+    cap: 3
+    unlock_tier: base
+  - skill: ash_magic
+    cap: 10
+    unlock_tier: elite
+  - skill: athletics
+    cap: 3
+    unlock_tier: base
+  - skill: enchant
+    cap: 4
+    unlock_tier: base
+  - skill: identify
+    cap: 9
+    unlock_tier: elite
+  - skill: light_armor
+    cap: 3
+    unlock_tier: base
+  - skill: light_blade
+    cap: 3
+    unlock_tier: base
+  - skill: resolve
+    cap: 3
+    unlock_tier: base
+  - skill: rune_magic
+    cap: 8
+    unlock_tier: elite
+  - skill: scribe
+    cap: 9
+    unlock_tier: elite
+  - skill: spellfire
+    cap: 10
+    unlock_tier: elite
+- key: voidcaller
+  slot: 23
+  name_ru: Пожиратель Бездны
+  name_en: Voidcaller
+  tier: elite
+  guild: ash
+  parent: war_weaver
+  required_level: 16
+  quest_register: QUEST_VOIDCALLER
+  requirements:
+    strength: 35
+    intellect: 40
+    dexterity: 40
+  skills:
+  - skill: abyss_magic
+    cap: 10
+    unlock_tier: elite
+  - skill: alchemy
+    cap: 9
+    unlock_tier: elite
+  - skill: ash_magic
+    cap: 6
+    unlock_tier: base
+  - skill: athletics
+    cap: 3
+    unlock_tier: base
+  - skill: bloodletting
+    cap: 8
+    unlock_tier: elite
+  - skill: enchant
+    cap: 9
+    unlock_tier: elite
+  - skill: identify
+    cap: 5
+    unlock_tier: base
+  - skill: light_armor
+    cap: 3
+    unlock_tier: base
+  - skill: light_blade
+    cap: 3
+    unlock_tier: base
+  - skill: resolve
+    cap: 3
+    unlock_tier: base
+  - skill: rune_magic
+    cap: 3
+    unlock_tier: base
+  - skill: scribe
+    cap: 5
+    unlock_tier: base
+  - skill: spellfire
+    cap: 9
+    unlock_tier: elite
+- key: starseer
+  slot: 24
+  name_ru: Звездочёт
+  name_en: Starseer
+  tier: elite
+  guild: dawn
+  parent: lightbearer
+  required_level: 16
+  quest_register: QUEST_STARSEER
+  requirements:
+    strength: 30
+    intellect: 45
+    dexterity: 35
+  skills:
+  - skill: athletics
+    cap: 3
+    unlock_tier: base
+  - skill: conduit
+    cap: 10
+    unlock_tier: elite
+  - skill: dawn_magic
+    cap: 10
+    unlock_tier: elite
+  - skill: identify
+    cap: 9
+    unlock_tier: elite
+  - skill: light_pole
+    cap: 3
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 4
+    unlock_tier: base
+  - skill: medium_shield
+    cap: 4
+    unlock_tier: base
+  - skill: parry
+    cap: 4
+    unlock_tier: base
+  - skill: resolve
+    cap: 9
+    unlock_tier: elite
+  - skill: rune_magic
+    cap: 10
+    unlock_tier: elite
+  - skill: spellfire
+    cap: 3
+    unlock_tier: base
+- key: chastiser
+  slot: 25
+  name_ru: Каратель
+  name_en: Chastiser
+  tier: elite
+  guild: dawn
+  parent: faithshield
+  required_level: 16
+  quest_register: QUEST_CHASTISER
+  requirements:
+    strength: 40
+    intellect: 40
+    dexterity: 35
+  skills:
+  - skill: athletics
+    cap: 3
+    unlock_tier: base
+  - skill: conduit
+    cap: 5
+    unlock_tier: base
+  - skill: crush
+    cap: 9
+    unlock_tier: elite
+  - skill: dawn_magic
+    cap: 9
+    unlock_tier: elite
+  - skill: heavy_armor
+    cap: 10
+    unlock_tier: elite
+  - skill: heavy_arms
+    cap: 9
+    unlock_tier: elite
+  - skill: identify
+    cap: 4
+    unlock_tier: base
+  - skill: light_pole
+    cap: 3
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 4
+    unlock_tier: base
+  - skill: medium_shield
+    cap: 4
+    unlock_tier: base
+  - skill: parry
+    cap: 4
+    unlock_tier: base
+  - skill: resolve
+    cap: 10
+    unlock_tier: elite
+  - skill: rune_magic
+    cap: 4
+    unlock_tier: base
+  - skill: spellfire
+    cap: 3
+    unlock_tier: base
+- key: pathlord
+  slot: 26
+  name_ru: Владыка Троп
+  name_en: Pathlord
+  tier: elite
+  guild: dusk
+  parent: stalker
+  required_level: 16
+  quest_register: QUEST_PATHLORD
+  requirements:
+    strength: 35
+    intellect: 40
+    dexterity: 45
+  skills:
+  - skill: archery
+    cap: 10
+    unlock_tier: elite
+  - skill: athletics
+    cap: 5
+    unlock_tier: base
+  - skill: barter
+    cap: 4
+    unlock_tier: base
+  - skill: disarm
+    cap: 5
+    unlock_tier: base
+  - skill: dual_light
+    cap: 5
+    unlock_tier: base
+  - skill: hawkeye
+    cap: 10
+    unlock_tier: elite
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 6
+    unlock_tier: base
+  - skill: lockpick
+    cap: 6
+    unlock_tier: base
+  - skill: pathfinding
+    cap: 10
+    unlock_tier: elite
+  - skill: perception
+    cap: 6
+    unlock_tier: base
+  - skill: pickpocket
+    cap: 5
+    unlock_tier: base
+  - skill: precision
+    cap: 9
+    unlock_tier: elite
+  - skill: shadowstrike
+    cap: 5
+    unlock_tier: base
+  - skill: stealth
+    cap: 9
+    unlock_tier: elite
+  - skill: throwing
+    cap: 5
+    unlock_tier: base
+- key: intriguer
+  slot: 27
+  name_ru: Интриган
+  name_en: Intriguer
+  tier: elite
+  guild: dusk
+  parent: beguiler
+  required_level: 16
+  quest_register: QUEST_INTRIGUER
+  requirements:
+    strength: 30
+    intellect: 45
+    dexterity: 45
+  skills:
+  - skill: abyss_magic
+    cap: 8
+    unlock_tier: elite
+  - skill: archery
+    cap: 4
+    unlock_tier: base
+  - skill: athletics
+    cap: 5
+    unlock_tier: base
+  - skill: barter
+    cap: 4
+    unlock_tier: base
+  - skill: disarm
+    cap: 10
+    unlock_tier: elite
+  - skill: dual_light
+    cap: 5
+    unlock_tier: base
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 6
+    unlock_tier: base
+  - skill: lockpick
+    cap: 10
+    unlock_tier: elite
+  - skill: perception
+    cap: 10
+    unlock_tier: elite
+  - skill: pickpocket
+    cap: 10
+    unlock_tier: elite
+  - skill: precision
+    cap: 4
+    unlock_tier: base
+  - skill: shadowstrike
+    cap: 5
+    unlock_tier: base
+  - skill: stealth
+    cap: 6
+    unlock_tier: base
+  - skill: throwing
+    cap: 5
+    unlock_tier: base
+- key: bannerlord
+  slot: 28
+  name_ru: Знаменосец
+  name_en: Bannerlord
+  tier: elite
+  guild: storm
+  parent: guardsman
+  required_level: 16
+  quest_register: QUEST_BANNERLORD
+  requirements:
+    strength: 35
+    intellect: 35
+    dexterity: 45
+  skills:
+  - skill: athletics
+    cap: 6
+    unlock_tier: base
+  - skill: brawl
+    cap: 5
+    unlock_tier: base
+  - skill: dual_medium
+    cap: 5
+    unlock_tier: base
+  - skill: forms
+    cap: 4
+    unlock_tier: base
+  - skill: heavy_pole
+    cap: 10
+    unlock_tier: elite
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 5
+    unlock_tier: base
+  - skill: light_pole
+    cap: 10
+    unlock_tier: elite
+  - skill: medium_armor
+    cap: 9
+    unlock_tier: elite
+  - skill: medium_blade
+    cap: 6
+    unlock_tier: base
+  - skill: parry
+    cap: 9
+    unlock_tier: elite
+  - skill: precision
+    cap: 4
+    unlock_tier: base
+  - skill: resolve
+    cap: 9
+    unlock_tier: elite
+- key: warmaster
+  slot: 29
+  name_ru: Военачальник
+  name_en: Warmaster
+  tier: elite
+  guild: storm
+  parent: storm_blade
+  required_level: 16
+  quest_register: QUEST_WARMASTER
+  requirements:
+    strength: 40
+    intellect: 35
+    dexterity: 35
+  skills:
+  - skill: athletics
+    cap: 6
+    unlock_tier: base
+  - skill: brawl
+    cap: 5
+    unlock_tier: base
+  - skill: crush
+    cap: 9
+    unlock_tier: elite
+  - skill: dual_medium
+    cap: 10
+    unlock_tier: elite
+  - skill: forms
+    cap: 4
+    unlock_tier: base
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 5
+    unlock_tier: base
+  - skill: light_pole
+    cap: 5
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 10
+    unlock_tier: elite
+  - skill: parry
+    cap: 6
+    unlock_tier: base
+  - skill: precision
+    cap: 9
+    unlock_tier: elite
+  - skill: resolve
+    cap: 9
+    unlock_tier: elite
+- key: bladesage
+  slot: 30
+  name_ru: Мастер Клинка
+  name_en: Bladesage
+  tier: elite
+  guild: storm
+  parent: storm_caller
+  required_level: 16
+  quest_register: QUEST_BLADESAGE
+  requirements:
+    strength: 30
+    intellect: 45
+    dexterity: 40
+  skills:
+  - skill: ash_magic
+    cap: 9
+    unlock_tier: elite
+  - skill: athletics
+    cap: 6
+    unlock_tier: base
+  - skill: brawl
+    cap: 5
+    unlock_tier: base
+  - skill: dual_medium
+    cap: 5
+    unlock_tier: base
+  - skill: enchant
+    cap: 10
+    unlock_tier: elite
+  - skill: forms
+    cap: 4
+    unlock_tier: base
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 5
+    unlock_tier: base
+  - skill: light_pole
+    cap: 5
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 9
+    unlock_tier: elite
+  - skill: parry
+    cap: 9
+    unlock_tier: elite
+  - skill: precision
+    cap: 4
+    unlock_tier: base
+  - skill: resolve
+    cap: 5
+    unlock_tier: base
+  - skill: spellfire
+    cap: 10
+    unlock_tier: elite
+- key: waymaster
+  slot: 31
+  name_ru: Мастер Пути
+  name_en: Waymaster
+  tier: elite
+  guild: storm
+  parent: ascetic
+  required_level: 16
+  quest_register: QUEST_WAYMASTER
+  requirements:
+    strength: 30
+    intellect: 35
+    dexterity: 45
+  skills:
+  - skill: athletics
+    cap: 10
+    unlock_tier: elite
+  - skill: brawl
+    cap: 10
+    unlock_tier: elite
+  - skill: dual_medium
+    cap: 5
+    unlock_tier: base
+  - skill: forms
+    cap: 10
+    unlock_tier: elite
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 5
+    unlock_tier: base
+  - skill: light_pole
+    cap: 5
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 6
+    unlock_tier: base
+  - skill: parry
+    cap: 6
+    unlock_tier: base
+  - skill: precision
+    cap: 9
+    unlock_tier: elite
+  - skill: resolve
+    cap: 10
+    unlock_tier: elite
+- key: nightlord
+  slot: 32
+  name_ru: Владыка Ночи
+  name_en: Nightlord
+  tier: elite
+  guild: storm
+  parent: duelist
+  required_level: 16
+  quest_register: QUEST_NIGHTLORD
+  requirements:
+    strength: 40
+    intellect: 30
+    dexterity: 45
+  skills:
+  - skill: athletics
+    cap: 6
+    unlock_tier: base
+  - skill: brawl
+    cap: 5
+    unlock_tier: base
+  - skill: dual_light
+    cap: 10
+    unlock_tier: elite
+  - skill: dual_medium
+    cap: 5
+    unlock_tier: base
+  - skill: forms
+    cap: 4
+    unlock_tier: base
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_blade
+    cap: 5
+    unlock_tier: base
+  - skill: light_pole
+    cap: 5
+    unlock_tier: base
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 6
+    unlock_tier: base
+  - skill: parry
+    cap: 6
+    unlock_tier: base
+  - skill: precision
+    cap: 10
+    unlock_tier: elite
+  - skill: resolve
+    cap: 5
+    unlock_tier: base
+  - skill: shadowstrike
+    cap: 10
+    unlock_tier: elite
+  - skill: stealth
+    cap: 10
+    unlock_tier: elite
+  - skill: throwing
+    cap: 9
+    unlock_tier: elite
+- key: war_witch
+  slot: 33
+  name_ru: Ведьма Войны
+  name_en: War Witch
+  tier: elite
+  guild: sisters
+  parent: charmweaver
+  required_level: 16
+  quest_register: QUEST_WARWITCH
+  requirements:
+    strength: 35
+    intellect: 45
+    dexterity: 40
+  skills:
+  - skill: abyss_magic
+    cap: 10
+    unlock_tier: elite
+  - skill: athletics
+    cap: 5
+    unlock_tier: base
+  - skill: dawn_magic
+    cap: 8
+    unlock_tier: elite
+  - skill: enchant
+    cap: 10
+    unlock_tier: elite
+  - skill: light_armor
+    cap: 5
+    unlock_tier: base
+  - skill: light_pole
+    cap: 9
+    unlock_tier: elite
+  - skill: medium_armor
+    cap: 4
+    unlock_tier: base
+  - skill: medium_blade
+    cap: 5
+    unlock_tier: base
+  - skill: parry
+    cap: 5
+    unlock_tier: base
+  - skill: resolve
+    cap: 5
+    unlock_tier: base
+  - skill: spellfire
+    cap: 10
+    unlock_tier: elite
+  - skill: throwing
+    cap: 4
+    unlock_tier: base
+- key: obsidian_lord
+  slot: 34
+  name_ru: Владыка Обсидиана
+  name_en: Obsidian Lord
+  tier: elite
+  guild: hidden
+  parent: shade
+  required_level: 24
+  quest_register: QUEST_OBSIDIANLORD
+  requirements:
+    strength: 40
+    intellect: 40
+    dexterity: 40
+    agility: 40
+    vitality: 40
+  skills:
+  - skill: abyss_magic
+    cap: 9
+    unlock_tier: elite
+  - skill: athletics
+    cap: 7
+    unlock_tier: base
+  - skill: bloodletting
+    cap: 7
+    unlock_tier: base
+  - skill: light_blade
+    cap: 7
+    unlock_tier: base
+  - skill: obsidian_hand
+    cap: 10
+    unlock_tier: elite
+  - skill: precision
+    cap: 7
+    unlock_tier: base
+  - skill: resolve
+    cap: 7
+    unlock_tier: base
+  - skill: rune_magic
+    cap: 10
+    unlock_tier: elite
+  - skill: shadowstrike
+    cap: 10
+    unlock_tier: elite
+  - skill: stealth
+    cap: 10
+    unlock_tier: elite
+progression:
+- level: 1
+  total_xp: 0
+  attribute_points: 0
+  skill_points: 10
+- level: 2
+  total_xp: 80
+  attribute_points: 2
+  skill_points: 4
+- level: 3
+  total_xp: 370
+  attribute_points: 2
+  skill_points: 4
+- level: 4
+  total_xp: 940
+  attribute_points: 2
+  skill_points: 4
+- level: 5
+  total_xp: 1820
+  attribute_points: 3
+  skill_points: 4
+- level: 6
+  total_xp: 3040
+  attribute_points: 2
+  skill_points: 4
+- level: 7
+  total_xp: 4620
+  attribute_points: 2
+  skill_points: 4
+- level: 8
+  total_xp: 6590
+  attribute_points: 2
+  skill_points: 4
+- level: 9
+  total_xp: 8960
+  attribute_points: 2
+  skill_points: 4
+- level: 10
+  total_xp: 11740
+  attribute_points: 3
+  skill_points: 6
+- level: 11
+  total_xp: 14960
+  attribute_points: 2
+  skill_points: 4
+- level: 12
+  total_xp: 18630
+  attribute_points: 2
+  skill_points: 4
+- level: 13
+  total_xp: 22760
+  attribute_points: 2
+  skill_points: 4
+- level: 14
+  total_xp: 27360
+  attribute_points: 2
+  skill_points: 4
+- level: 15
+  total_xp: 32450
+  attribute_points: 3
+  skill_points: 4
+- level: 16
+  total_xp: 38030
+  attribute_points: 2
+  skill_points: 4
+- level: 17
+  total_xp: 44110
+  attribute_points: 2
+  skill_points: 4
+- level: 18
+  total_xp: 50710
+  attribute_points: 2
+  skill_points: 4
+- level: 19
+  total_xp: 57830
+  attribute_points: 2
+  skill_points: 4
+- level: 20
+  total_xp: 65490
+  attribute_points: 3
+  skill_points: 6
+- level: 21
+  total_xp: 73690
+  attribute_points: 2
+  skill_points: 4
+- level: 22
+  total_xp: 82450
+  attribute_points: 2
+  skill_points: 4
+- level: 23
+  total_xp: 91760
+  attribute_points: 2
+  skill_points: 4
+- level: 24
+  total_xp: 101630
+  attribute_points: 2
+  skill_points: 4
+- level: 25
+  total_xp: 112080
+  attribute_points: 3
+  skill_points: 4
+- level: 26
+  total_xp: 123120
+  attribute_points: 2
+  skill_points: 4
+- level: 27
+  total_xp: 134740
+  attribute_points: 2
+  skill_points: 4
+- level: 28
+  total_xp: 146960
+  attribute_points: 2
+  skill_points: 4
+- level: 29
+  total_xp: 159780
+  attribute_points: 2
+  skill_points: 4
+- level: 30
+  total_xp: 173210
+  attribute_points: 3
+  skill_points: 6
+- level: 31
+  total_xp: 187260
+  attribute_points: 2
+  skill_points: 4
+- level: 32
+  total_xp: 201930
+  attribute_points: 2
+  skill_points: 4
+- level: 33
+  total_xp: 217220
+  attribute_points: 2
+  skill_points: 4
+- level: 34
+  total_xp: 233150
+  attribute_points: 2
+  skill_points: 4
+- level: 35
+  total_xp: 249730
+  attribute_points: 3
+  skill_points: 4
+- level: 36
+  total_xp: 266940
+  attribute_points: 2
+  skill_points: 4
+- level: 37
+  total_xp: 284810
+  attribute_points: 2
+  skill_points: 4
+- level: 38
+  total_xp: 303340
+  attribute_points: 2
+  skill_points: 4
+- level: 39
+  total_xp: 322530
+  attribute_points: 2
+  skill_points: 4
+- level: 40
+  total_xp: 342380
+  attribute_points: 3
+  skill_points: 6

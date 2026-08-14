@@ -1,0 +1,743 @@
+﻿sfx_id;wav;sample_rate;load_mode;comment
+0;;11025;;SFX_0
+1;blizzard.wav;11025;resident;
+2;conjure2.wav;11025;resident;
+3;dud_4.wav;11025;resident;
+4;light_1.wav;11025;resident;
+5;spell_locuststart.wav;22050;resident;DLORDS LOCUST SWARM START
+6;resurrect.wav;11025;resident;
+7;time_2lp.wav;11025;resident;
+8;BindingF.wav;11025;resident;
+9;GALDRYNHORN.wav;11025;resident;DLORDS USE GALDRYN'S HORN
+10;DARK_1.wav;11025;resident;DLORDS HEAL SFX_HEAL          10
+11;spell_fireball.wav;22050;resident;DLORDS FIREBALL SFX_FIREBALL  11
+12;spell_fire_jet.wav;22050;resident;DLORDS DRAGONSTAFF SFX_FIREJET 12
+13;spell_fire_star.wav;22050;resident;DLORDS FIRESTAR SFX_FIRESTAR 13
+14;spell_explosion_small_b.wav;22050;resident;DLORDS EXPLOSION SFX_EXPLOSION 14
+15;HEARTBEAT.wav;11025;resident;DLORDS TIMEWARP SFX_HEARTBEAT 15
+16;spell_magic_missile.wav;22050;resident;DLORDS MAGICMISSLE SFX_MAGICMISSILE 16
+17;spell_fireup.wav;22050;resident;DLORDS FIRE_UP_HAND SFX_FIREUP 17
+18;fire_loop_medium.wav;22050;resident;DLORDS FIRE_UP_LOOP SFX_FIRELOOP 18
+19;spell_fire_staff_mod2.wav;22050;resident;DLORDS FIRESTAFF SFX_DRAGONSTAFF 19
+20;spell_iceball.wav;22050;resident;DLORDS ICEBALL SFX_ICEBALL 20
+21;ESHIELD06.wav;11025;resident;DAK ENERGY SHIELD SFX_21
+22;ERROR1.wav;11025;resident;SFX_RQERROR   22  IN USE
+23;cryptdoor-a-2.wav;11025;resident;SFX_RQWORKING 26
+24;cryptdoor-a-2.wav;11025;resident;SFX_RQWORKING 26
+25;BELL12.wav;11025;resident;SFX_RQREADY   25  IN USE
+26;cryptdoor-a-2.wav;11025;resident;DLORDS BUTTON SFX_RQWORKING 26
+27;spell_skillplus.wav;22050;resident;DLORDS - INTERFACE SKILL BOOST
+28;spell_explosion_medium_A.wav;22050;resident;
+29;spell_explosion_medium_B.wav;22050;resident;
+30;spell_explosion_large_B.wav;22050;resident;
+31;spell_locustloop.wav;22050;resident;
+32;spell_poisonous_cloud.wav;22050;resident;
+33;spell_dispel_undead.wav;22050;resident;
+34;spell_heal_heavy.wav;22050;resident;
+35;spell_magic_armor.wav;22050;resident;
+36;spell_summon_monster_c.wav;22050;resident;
+37;spell_time_slow.wav;22050;resident;
+38;spell_weaken.wav;22050;resident;
+39;spell_slow_monsters.wav;22050;resident;
+40;spell_pain.wav;22050;resident;
+41;spell_magic_fizzle_B.wav;22050;resident;
+42;PCNEXT.wav;11025;resident;SFX_PCNEXT    42
+43;PCSELECT.wav;11025;resident;SFX_PCCHANGE  43
+44;SPELL4.wav;11025;resident;SFX_GETSPELL  44
+45;spell_bless.wav;22050;resident;
+46;spell_bee_swarm.wav;22050;resident;
+47;WALK1x.wav;11025;resident;DAK FOOTSTEPS
+48;WALK2x.wav;11025;resident;DAK FOOTSTEPS
+49;splash_6x.wav;11025;resident;SFX_SWIM     49
+50;splash_7x.wav;11025;resident;SFX_SPLASH   50
+51;BLADES_1.wav;11025;resident;SFX_BLADES		51
+52;Bless_1a.wav;11025;resident;SFX_BLESS			52
+53;BodyArmor_1.wav;11025;resident;SFX_BODYARMOR		53
+54;SHADOWGATE.wav;11025;resident;DLORDS SHADOWGATE SFX_BURN			54
+55;WATERBAD2.wav;11025;resident;DLORDS BAD POOL   SFX_DEATHHEAD		55
+56;DispelUndead_1.wav;11025;resident;SFX_DISPEL		56
+57;spell_blizzard.wav;22050;resident;SFX_WHIRLWIND
+58;BANSHEE_SCREAM.wav;11025;resident;DLORDS BANSHEE SFX_FLYINGFIST	58
+59;Freeze_2.wav;11025;resident;SFX_FREEZE		59
+60;spell_lightning.wav;22050;resident;SFX_LIGHTNING   60  NEW PCB!
+61;MajorHeal_1.wav;11025;resident;DLORDS SFX_RESURRECT		61
+62;GasJet.wav;11025;resident;DLORDS GAS JET SFX_PAIN			62
+63;Silence_2.wav;11025;resident;SFX_SILENCE		63
+64;Sparkle1B.wav;11025;resident;DLORDS ITEM SPARKLE SFX_TINKLE		64
+65;Weaken_1a.wav;11025;resident;SFX_WEAKEN		65
+66;ZipMove.wav;11025;resident;DLORDS ZIPMOVE TELEPORT SFX_DERVISH		66
+67;Spell_ShootSparks.wav;22050;resident;DLORDS SFX_SHOOTSPARKS 67
+68;robotwalk_1.wav;11025;;DAK ROBOT WALK 1
+69;robotwalk_2.wav;11025;;DAK ROBOT WALK 2
+70;droidwalk_1.wav;11025;;DAK DROID WALK 1
+71;droidwalk_2.wav;11025;;DAK DROID WALK 2
+72;mummy_wound_d.wav;22050;;
+73;WIND_1.wav;11025;;DLORDS (MONSNDREC#27)
+74;mummy_death_x.wav;22050;;
+75;fem_attack.wav;11025;;DLORDS FEMALE
+76;fem_spell.wav;11025;;DLORDS FEMALE
+77;fem_wound5.wav;11025;;DLORDS FEMALE
+78;demon_laugh.wav;11025;;DLORDS
+79;demon_growl.wav;11025;;DLORDS
+80;demon_breath.wav;11025;;DLORDS
+81;demon_snort.wav;11025;;DLORDS
+82;skeleton_death.wav;22050;;DLORDS
+83;demon_wound.wav;11025;;
+84;mummystepL.wav;11025;resident;DLORDS FOOTSTEPS
+85;mummystepR.wav;11025;resident;DLORDS FOOTSTEPS
+86;ghost_move.wav;11025;;DLORDS
+87;ghost_growl.wav;11025;;DLORDS
+88;runstepA1RNC.wav;11025;resident;DLORDS FOOTSTEPS
+89;runstepA2RNC.wav;11025;resident;DLORDS FOOTSTEPS
+90;;11025;;
+91;;11025;;
+92;walkdirt1.wav;11025;resident;DLORDS FOOTSTEPS
+93;walkdirt2.wav;11025;resident;DLORDS FOOTSTEPS
+94;;11025;;
+95;;11025;;
+96;DragonDeath.wav;11025;;DLORDS
+97;wrwolf_growl.wav;11025;;DLORDS
+98;devildog_bite.wav;11025;;DLORDS
+99;devildog_claw.wav;11025;;DLORDS
+100;devildog_wound.wav;11025;;DLORDS
+101;devildog_foot0.wav;11025;resident;DLORDS FOOTSTEPS
+102;devildog_foot1.wav;11025;resident;DLORDS FOOTSTEPS
+103;devildog_foot2.wav;11025;resident;DLORDS FOOTSTEPS
+104;devildog_foot3.wav;11025;resident;DLORDS FOOTSTEPS
+105;wtpred_swim.wav;11025;;DLORDS
+106;hellhound_headbutt_x.wav;22050;;DLORDS
+107;goblin_growl.wav;11025;;DLORDS
+108;goblin_wound.wav;11025;;DLORDS
+109;goblin_yell.wav;11025;;DLORDS
+110;goblin_attack.wav;11025;;DLORDS
+111;hydr_5.wav;11025;;DAK ROBOT
+112;hydr_6.wav;11025;;DAK ROBOT
+113;hydr_7.wav;11025;;DAK ROBOT
+114;goblin_laughA.wav;11025;;DLORDS
+115;goblin_laughB.wav;11025;;DLORDS
+116;ogre_roar_mix.wav;11025;;DLORDS
+117;ogre_shortroar.wav;11025;;DLORDS
+118;ogre_shortroar2.wav;11025;;DLORDS
+119;statue_fall.wav;11025;;DLORDS
+120;Naga_move.wav;11025;;DLORDS
+121;CRUST_1.wav;11025;;DLORDS
+122;Nagaqueen_wound.wav;11025;;DLORDS
+123;Medusa_7.wav;11025;;DLORDS
+124;Nagaqueen_death.wav;11025;;DLORDS
+125;Naga_growl.wav;11025;;DLORDS
+126;spider_growl.wav;11025;;DLORDS
+127;spider_move.wav;11025;;DLORDS
+128;spider_attack.wav;11025;;DLORDS
+129;spider_wound.wav;11025;;DLORDS
+130;spider_death.wav;11025;;DLORDS
+131;Bee_2fly.wav;11025;;
+132;Bee_6sting.wav;11025;;
+133;Bee_7bite.wav;11025;;
+134;Bee_8wound.wav;11025;;
+135;Bee_9death.wav;11025;;
+136;shark_bite.wav;11025;;
+137;shark_wound.wav;11025;;
+138;shark_death.wav;11025;;
+139;Shark_swim.wav;11025;;
+140;bat1_attack.wav;22050;;
+141;bat1_attack_a.wav;22050;;
+142;bat1_death.wav;22050;;
+143;bat1_growl.wav;22050;;
+144;bat1_grunt.wav;22050;;
+145;bat1_grunt_a.wav;22050;;
+146;bat1_wound.wav;22050;;
+147;bat1_wound_a.wav;22050;;
+148;giantsnake1_attack.wav;22050;;
+149;giantsnake1_death.wav;22050;;
+150;giantsnake1_growl.wav;22050;;
+151;leftstep.wav;11025;resident;DLORDS FOOTSTEPS
+152;rightstep.wav;11025;resident;DLORDS FOOTSTEPS
+153;giantsnake1_grunt_a.wav;22050;;
+154;giantsnake1_wound_a.wav;22050;;
+155;devildog_new_claw.wav;22050;;DLORDS
+156;firedrake1_growl_x.wav;22050;;
+157;bandit_attack.wav;11025;;DLORDS
+158;bandit_death.wav;11025;;DLORDS
+159;bandit_steal.wav;11025;;DLORDS
+160;bandit_wound-LG.wav;11025;;DLORDS
+161;bandit_wound-SM.wav;11025;;DLORDS
+162;bandit_sneak.wav;11025;;DLORDS
+163;bat_attack.wav;11025;;DLORDS
+164;bat_death.wav;11025;;DLORDS
+165;bat_flapdown.wav;11025;resident;DLORDS FOOTSTEPS
+166;bat_flapup.wav;11025;resident;DLORDS FOOTSTEPS
+167;bat_wound.wav;11025;;DLORDS
+168;RODENT_1.wav;11025;;DLORDS
+169;pckrat_4.wav;11025;;DLORDS
+170;firedrake1_attack.wav;22050;;
+171;firedrake1_death.wav;22050;;
+172;firedrake1_growl_a.wav;22050;;
+173;firedrake1_grunt.wav;22050;;
+174;firedrake1_grunt_a.wav;22050;;
+175;LEECH_move.wav;11025;;DLORDS
+176;LEECH_2.wav;11025;;DLORDS
+177;LEECH_wound.wav;11025;;DLORDS
+178;LEECH_breath.wav;11025;;DLORDS
+179;Muck_attack.wav;11025;;DLORDS
+180;LEECH_death.wav;11025;;DLORDS
+181;LEECH_5.wav;11025;;DLORDS
+182;monster2_bigstep01.wav;22050;resident;"""giantwalkL.wav"",11025,R, * GIANT FOOT"
+183;monster2_bigstep02.wav;22050;resident;"""giantwalkR.wav"",11025,R, * GIANT FOOT"
+184;monster2_bigstep03.wav;22050;resident;LARGE FOOT
+185;monster2_bigstep04.wav;22050;resident;LARGE FOOT
+186;bearbeast1_attack.wav;22050;;
+187;bearbeast1_growl.wav;22050;;
+188;bearbeast1_grunt.wav;22050;;
+189;bearbeast1_new_death.wav;22050;;
+190;bearbeast1_wound.wav;22050;;
+191;minotaur1_grunt.wav;22050;;
+192;moonbeast1_wound.wav;22050;;
+193;gazer1_attack.wav;22050;;
+194;gazer1_castmagic.wav;22050;;
+195;gazer1_death.wav;22050;;
+196;gazer1_growl.wav;22050;;
+197;gazer1_grunt.wav;22050;;
+198;gazer1_wound.wav;22050;;
+199;mushfungus1_attack.wav;22050;;
+200;mushfungus1_death.wav;22050;;
+201;mushfungus1_grunt_a.wav;22050;;
+202;mushfungus1_wound.wav;22050;;
+203;mushfungus1_growl.wav;22050;;
+204;cacodeamon1_attack.wav;22050;;
+205;cacodeamon1_growl.wav;22050;;
+206;cacodeamon1_grunt.wav;22050;;
+207;cacodeamon1_wound.wav;22050;;
+208;gelcube1_attack.wav;22050;;
+209;gelcube1_growl.wav;22050;;
+210;gelcube1_grunt.wav;22050;;
+211;gelcube1_wound.wav;22050;;
+212;demongod1_attack.wav;22050;;
+213;demongod1_growl_a.wav;22050;;
+214;demongod1_grunt.wav;22050;;
+215;demongod1_new_death.wav;22050;;
+216;demongod1_wound.wav;22050;;
+217;demon2_laugh_z0.wav;22050;;
+218;siren1_growl.wav;22050;;
+219;carrioncrawler1_attack.wav;22050;;
+220;carrioncrawler1_castmagic_a.wav;22050;;
+221;carrioncrawler1_death.wav;22050;;
+222;carrioncrawler1_growl.wav;22050;;
+223;carrioncrawler1_grunt_a.wav;22050;;
+224;carrioncrawler1_wound_a.wav;22050;;
+225;chunneler1_grunt.wav;22050;;
+226;chunneler2_attack.wav;22050;;
+227;chunneler2_castmagic.wav;22050;;
+228;chunneler2_death.wav;22050;;
+229;chunneler2_growl.wav;22050;;
+230;chunneler2_grunt.wav;22050;;
+231;chunneler2_move.wav;22050;;
+232;chunneler2_wound.wav;22050;;
+233;demon1_attack_a.wav;22050;;
+234;demon1_death.wav;22050;;
+235;demon1_growl.wav;22050;;
+236;demon1_growl_a.wav;22050;;
+237;demon1_wound.wav;22050;;
+238;demondog1_grunt.wav;22050;;
+239;mummy2_attack.wav;22050;;
+240;mummy2_growl_2.wav;22050;;
+241;mummy2_grunt.wav;22050;;
+242;goblin1_death_a.wav;22050;;
+243;goblin1_growl_a.wav;22050;;
+244;goblin1_grunt_a.wav;22050;;
+245;skeleton2_move_a.wav;22050;;
+246;skeleton2_move_b.wav;22050;;
+247;skeleton2_move_c.wav;22050;;
+248;ghost1_death.wav;22050;;
+249;ghost1_growl.wav;22050;;
+250;ghost1_grunt.wav;22050;;
+251;ghost1_grunt_a.wav;22050;;
+252;livingwall1_attack.wav;22050;;
+253;livingwall1_death.wav;22050;;
+254;livingwall1_grunt.wav;22050;;
+255;livingwall1_new_growl.wav;22050;;
+256;livingwall1_wound.wav;22050;;
+257;wraith1_attack.wav;22050;;
+258;wraith1_attack_a.wav;22050;;
+259;wraith1_death.wav;22050;;
+260;wraith1_death_a.wav;22050;;
+261;wraith1_growl.wav;22050;;
+262;wraith1_growl_a.wav;22050;;
+263;wraith1_wound.wav;22050;;
+264;nagaqueen1_attack.wav;22050;;
+265;nagaqueen1_castmagic.wav;22050;;
+266;nagaqueen1_death.wav;22050;;
+267;nagaqueen1_growl.wav;22050;;
+268;nagaqueen1_grunt.wav;22050;;
+269;nagaqueen1_wound.wav;22050;;
+270;nagaqueen2_step01.wav;22050;;
+271;nagaqueen2_step02.wav;22050;;
+272;rat2_attack_a.wav;22050;;
+273;rat2_attack_b.wav;22050;;
+274;rat2_death_a.wav;22050;;
+275;rat2_death_b.wav;22050;;
+276;rat2_growl.wav;22050;;
+277;rat2_roar.wav;22050;;
+278;rat2_wound_a.wav;22050;;
+279;rat2_wound_b.wav;22050;;
+280;scorpioncrab1_attack.wav;22050;;
+281;scorpioncrab1_death.wav;22050;;
+282;scorpioncrab1_death_a.wav;22050;;
+283;scorpioncrab1_growl_a.wav;22050;;
+284;scorpioncrab1_grunt_a.wav;22050;;
+285;scorpioncrab1_wound.wav;22050;;
+286;scorpioncrab1_wound_a.wav;22050;;
+287;slime1_attack.wav;22050;;
+288;slime1_death.wav;22050;;
+289;slime1_growl_a.wav;22050;;
+290;slime1_grunt_a.wav;22050;;
+291;slime1_new_death.wav;22050;;
+292;slime1_wound.wav;22050;;
+293;spider1_attack.wav;22050;;
+294;spider1_attack_a.wav;22050;;
+295;spider1_growl_a.wav;22050;;
+296;spider1_grunt.wav;22050;;
+297;spider1_grunt_a.wav;22050;;
+298;spider1_wound_a.wav;22050;;
+299;slime2_attack_a.wav;22050;;
+300;slime2_attack_b.wav;22050;;
+301;slime2_death_a.wav;22050;;
+302;slime2_death_b2.wav;22050;;
+303;slime2_growl.wav;22050;;
+304;slime2_moving_a.wav;22050;;
+305;slime2_moving_b.wav;22050;;
+306;slime2_roar.wav;22050;;
+307;slime2_wound_a.wav;22050;;
+308;slime2_wound_b.wav;22050;;
+309;demondog2_attack.wav;22050;;
+310;demondog_breath_z.wav;22050;;
+311;demondog2_death.wav;22050;;
+312;demondog2_growl.wav;22050;;
+313;demondog2_grunt.wav;22050;;
+314;demondog2_wound.wav;22050;;
+315;dungeonghoul2_attack.wav;22050;;
+316;dungeonghoul2_death.wav;22050;;
+317;dungeonghoul2_growl.wav;22050;;
+318;dungeonghoul2_grunt.wav;22050;;
+319;dungeonghoul2_wound_x.wav;22050;;
+320;naga2_attack.wav;22050;;
+321;naga2_castmagic.wav;22050;;
+322;naga2_death.wav;22050;;
+323;naga2_growl.wav;22050;;
+324;naga2_grunt.wav;22050;;
+325;naga2_wound_x.wav;22050;;
+326;swampcreature1_attack_a.wav;22050;;
+327;swampcreature1_castmagic.wav;22050;;
+328;swampcreature1_death.wav;22050;;
+329;swampcreature1_growl.wav;22050;;
+330;swampcreature1_grunt.wav;22050;;
+331;swampcreature1_wound.wav;22050;;
+332;swampcreature2_attack_a.wav;22050;;
+333;swampcreature2_death.wav;22050;;
+334;swampcreature2_move.wav;22050;;
+335;swampcreature2_roar.wav;22050;;
+336;treant2_move.wav;22050;;
+337;scorpioncrab2_attack_a.wav;22050;;
+338;scorpioncrab2_attack_b.wav;22050;;
+339;scorpioncrab2_death_a.wav;22050;;
+340;scorpioncrab2_death_b.wav;22050;;
+341;scorpioncrab2_growl2.wav;22050;;
+342;scorpioncrab2_roar.wav;22050;;
+343;scorpioncrab2_wound_a.wav;22050;;
+344;scorpioncrab2_wound_b.wav;22050;;
+345;spider2_attack_a.wav;22050;;
+346;spider2_attack_b.wav;22050;;
+347;spider2_death_a.wav;22050;;
+348;spider2_death_b.wav;22050;;
+349;spider2_growl.wav;22050;;
+350;spider2_moving_a.wav;22050;;
+351;wolf2_attack_a2.wav;22050;;
+352;wolf2_attack_b.wav;22050;;
+353;wolf2_attack_c.wav;22050;;
+354;wolf2_death_l.wav;22050;;
+355;wolf2_growl_x.wav;22050;;
+356;wolf2_grunt_a.wav;22050;;
+357;wolf2_grunt_b.wav;22050;;
+358;wolf2_roar.wav;22050;;
+359;wolf2_wound_l.wav;22050;;
+360;wolf2_wound_a.wav;22050;;
+361;wolf2_wound_b.wav;22050;;
+362;witch_growl.wav;11025;;
+363;witch_death.wav;11025;;
+364;witch_wound.wav;11025;;
+365;witch_wound_b.wav;11025;;
+366;witch_wound_c.wav;11025;;
+367;wolf2_growl_z.wav;22050;;
+368;treant_wound.wav;22050;;
+369;mummy_wound_c.wav;22050;;
+370;dirt_light_medium_Amod1.wav;22050;resident;FORWARD
+371;dirt_light_medium_AAmod1.wav;22050;resident;
+372;dirt_light_medium_Bmod1.wav;22050;resident;
+373;dirt_light_medium_BBmod1.wav;22050;resident;
+374;dirt_light_medium_Cmod4.wav;22050;resident;SIDESTEP BACKSTEP
+375;dirt_light_medium_CCmod4.wav;22050;resident;
+376;dirt_light_medium_Dmod4.wav;22050;resident;
+377;dirt_light_medium_DDmod4.wav;22050;resident;
+378;grass_light_medium_a.wav;22050;resident;FORWARD
+379;grass_light_medium_aa.wav;22050;resident;
+380;grass_light_medium_b.wav;22050;resident;
+381;grass_light_medium_bb.wav;22050;resident;
+382;grass_light_medium_a.wav;22050;resident;SIDESTEP BACKSTEP
+383;grass_light_medium_aa.wav;22050;resident;
+384;grass_light_medium_b.wav;22050;resident;
+385;grass_light_medium_bb.wav;22050;resident;
+386;mountain_rock_light_med_a.wav;22050;resident;FORWARD
+387;mountain_rock_light_med_aa.wav;22050;resident;
+388;mountain_rock_light_med_b.wav;22050;resident;
+389;mountain_rock_light_med_bb.wav;22050;resident;
+390;mountain_rock_light_med_a.wav;22050;resident;SIDESTEP BACKSTEP
+391;mountain_rock_light_med_aa.wav;22050;resident;
+392;mountain_rock_light_med_b.wav;22050;resident;
+393;mountain_rock_light_med_bb.wav;22050;resident;
+394;water_puddles_swamp_med_amod1.wav;22050;resident;
+395;water_puddles_swamp_med_aamod1.wav;22050;resident;
+396;slip_on_slope_light.wav;22050;resident;
+397;slip_on_slope_medium.wav;22050;resident;
+398;;11025;;
+399;;11025;;
+400;Door_Metal_Giant_Open.wav;22050;resident;NEW PCB
+401;Door_Metal_Giant_Stop.wav;22050;resident;NEW PCB
+402;susdoor-a.wav;11025;;DLORDS OPEN GATE
+403;gatestop.wav;11025;;DLORDS
+404;dooropen.wav;11025;;DLORDS OPEN DOOR
+405;mine-e-2.wav;11025;;DLORDS
+406;crusher1-a.wav;11025;;DLORDS OPEN WALL
+407;crusher1-b.wav;11025;;DLORDS
+408;woodgearlift.wav;11025;;DLORDS LIFT, HITPROP SPINAXE
+409;liftstop.wav;11025;;DLORDS
+410;chopaxe2.wav;11025;;DLORDS HITPROP CHOPAXE
+411;hugestone-d-2.wav;11025;resident;DLORDS GIANTFALL
+412;pillarfallnew.wav;11025;;DLORDS STONEBRIDGE FALL END
+413;Door_Stone_Giant_Stop.wav;22050;resident;NEW PCB
+414;Door_Wood_Slide_Giant_Stop.wav;22050;resident;NEW PCB
+415;sword_impact_flesh_large_01.wav;22050;resident;
+416;sword_impact_flesh_large_02.wav;22050;resident;
+417;sword_leather_large_01.wav;22050;resident;
+418;sword_leather_large_02.wav;22050;resident;
+419;sword_impact_chain_large_01.wav;22050;resident;
+420;sword_impact_chain_large_02.wav;22050;resident;
+421;sword_impact_metal_large_01.wav;22050;resident;
+422;sword_impact_stone_large_01.wav;22050;resident;
+423;mountain_rock_heavy_b.wav;22050;resident;
+424;mountain_rock_heavy_bb.wav;22050;resident;
+425;sword_impact_flesh_med_01.wav;22050;resident;
+426;sword_impact_flesh_med_02.wav;22050;resident;
+427;sword_leather_med_01.wav;22050;resident;
+428;sword_leather_med_02.wav;22050;resident;
+429;sword_impact_chain_med_01.wav;22050;resident;
+430;sword_impact_chain_med_02.wav;22050;resident;
+431;sword_impact_stone_med_01.wav;22050;resident;
+432;sword_impact_stone_med_02.wav;22050;resident;
+433;carpet_medium_aa.wav;22050;resident;
+434;arrow_impact_flesh_01.wav;22050;resident;
+435;sword_impact_flesh_small_01.wav;22050;resident;
+436;sword_impact_flesh_small_02.wav;22050;resident;
+437;sword_leather_small_01.wav;22050;resident;
+438;sword_leather_small_02.wav;22050;resident;
+439;sword_impact_chain_small_01.wav;22050;resident;
+440;sword_impact_chain_small_02.wav;22050;resident;
+441;sword_impact_metal_small_01.wav;22050;resident;
+442;sword_impact_metal_small_02.wav;22050;resident;
+443;sword_impact_stone_small_01.wav;22050;resident;
+444;sword_impact_stone_small_02.wav;22050;resident;
+445;arrow_impact_flesh_02.wav;22050;resident;
+446;combat_brawl_punch_hit_a.wav;22050;resident;
+447;combat_ninja_punch_hit_a.wav;22050;resident;
+448;combat_ninja_punch_hit_b.wav;22050;resident;
+449;combat_brawl_kick_hit_a.wav;22050;resident;
+450;combat_ninja_kick_hit_a.wav;22050;resident;
+451;combat_ninja_kick_hit_b.wav;22050;resident;
+452;arrow_impact_leather_01.wav;22050;resident;
+453;arrow_impact_leather_02.wav;22050;resident;
+454;arrow_impact_chain_01.wav;22050;resident;
+455;arrow_impact_chain_02.wav;22050;resident;
+456;arrow_impact_plate_01.wav;22050;resident;
+457;arrow_impact_plate_02.wav;22050;resident;
+458;arrow_impact_stone_01a.wav;22050;resident;
+459;arrow_impact_stone_02.wav;22050;resident;
+460;sword_glances_large_01.wav;22050;resident;
+461;sword_glances_large_02.wav;22050;resident;
+462;sword_glances_med_01.wav;22050;resident;
+463;sword_glances_med_02.wav;22050;resident;
+464;sword_glances_small_01.wav;22050;resident;
+465;sword_glances_small_02.wav;22050;resident;
+466;sword_large_01.wav;22050;resident;
+467;sword_large_02.wav;22050;resident;
+468;sword_large_03.wav;22050;resident;
+469;sword_large_04.wav;22050;resident;
+470;sword_med_01.wav;22050;resident;
+471;sword_med_02.wav;22050;resident;
+472;sword_med_03.wav;22050;resident;
+473;sword_med_04.wav;22050;resident;
+474;sword_small_04modA.wav;22050;resident;
+475;sword_small_03modA.wav;22050;resident;
+476;sword_small_03.wav;22050;resident;
+477;sword_small_04.wav;22050;resident;
+478;combat_magic_spell_hit_a.wav;22050;resident;
+479;combat_magic_spell_hit_b.wav;22050;resident;
+480;bow_draw.wav;22050;resident;
+481;bow_fire_01.wav;22050;resident;
+482;bow_fire_02.wav;22050;resident;
+483;combat_knife_throw_a.wav;22050;resident;
+484;combat_knife_throw_b.wav;22050;resident;
+485;sword_impact_wood_large_01.wav;22050;resident;
+486;sword_impact_wood_large_02.wav;22050;resident;
+487;sword_impact_wood_med_01.wav;22050;resident;
+488;sword_impact_wood_med_02.wav;22050;resident;
+489;sword_impact_wood_small_01.wav;22050;resident;
+490;sword_impact_wood_small_02.wav;22050;resident;
+491;arrow_impact_wood_01.wav;22050;resident;
+492;arrow_impact_wood_02.wav;22050;resident;
+493;combat_magic_swish_amod4.wav;22050;resident;
+494;combat_magic_swish_bmod1.wav;22050;resident;
+495;;11025;;
+496;;11025;;
+497;;11025;;
+498;;11025;;
+499;;11025;;
+500;ADPCM_outdoor_bird_chirps_tweetsA.wav;22050;resident;
+501;ADPCM_outdoor_bird_chirps_tweetsB.wav;22050;resident;
+502;ADPCM_outdoor_bird_chirps_tweetsC.wav;22050;resident;
+503;outdoor_hawk_call.wav;22050;resident;
+504;outdoor_critter_sounds.wav;22050;resident;
+505;outdoor_grass_crickets_a.wav;22050;resident;
+506;outdoor_crow_call2.wav;22050;resident;
+507;outdoor_grass_crickets_b.wav;22050;resident;
+508;outdoor_bat_cry.wav;22050;resident;
+509;outdoor_bat_bird_flutter.wav;22050;resident;
+510;outdoor_frog_croaks_a.wav;22050;resident;
+511;outdoor_frog_croaks_b.wav;22050;resident;
+512;outdoor_owl_hoot.wav;22050;resident;
+513;outdoor_wolf_howl_b.wav;22050;resident;
+514;;11025;;
+515;;11025;;
+516;;11025;;
+517;;11025;;
+518;;11025;;
+519;;11025;;
+520;click.wav;11025;;
+521;deadbolt.wav;11025;;
+522;coffinchest.wav;11025;;
+523;small_button.wav;11025;;
+524;vase.wav;11025;;
+525;small_button2.wav;11025;;
+526;button_brick.wav;11025;;
+527;button_medium.wav;11025;;
+528;reactor.wav;11025;;
+529;snakebowl.wav;11025;;
+530;castle_chain_rattles_a.wav;22050;resident;
+531;castle_chain_rattles_b.wav;22050;resident;
+532;castle_chain_rattles_c.wav;22050;resident;
+533;castle_creepy_critter_bat.wav;22050;resident;
+534;castle_creepy_critter_bug.wav;22050;resident;
+535;castle_creepy_critter_rat.wav;22050;resident;
+536;castle_deep_drum_thumps_a.wav;22050;resident;
+537;castle_deep_drum_thumps_b.wav;22050;resident;
+538;castle_deep_drum_thumps_c.wav;22050;resident;
+539;castle_ghostly_voices_a.wav;22050;resident;
+540;castle_ghostly_voices_b.wav;22050;resident;
+541;castle_ghostly_voices_c.wav;22050;resident;
+542;castle_ghostly_voices_d.wav;22050;resident;
+543;castle_haunted_dungeon_a.wav;22050;resident;
+544;castle_haunted_dungeon_b.wav;22050;resident;
+545;castle_haunted_dungeon_c.wav;22050;resident;
+546;castle_haunted_dungeon_d.wav;22050;resident;
+547;castle_haunted_dungeon_e.wav;22050;resident;
+548;castle_haunted_dungeon_f.wav;22050;resident;
+549;castle_haunted_dungeon_g.wav;22050;resident;
+550;castle_screams_torture_a.wav;22050;resident;
+551;castle_screams_torture_bmod1.wav;22050;resident;
+552;castle_screams_torture_c.wav;22050;resident;
+553;castle_screams_torture_d.wav;22050;resident;
+554;castle_cave_ambient_a.wav;22050;resident;
+555;castle_cave_ambient_b.wav;22050;resident;
+556;castle_cave_ambient_c.wav;22050;resident;
+557;castle_cave_ambient_d.wav;22050;resident;
+558;castle_cave_ambient_e.wav;22050;resident;
+559;castle_drips_short_a.wav;22050;resident;
+560;castle_drips_short_b.wav;22050;resident;
+561;castle_drips_short_c.wav;22050;resident;
+562;castle_eerie_wind_a.wav;22050;resident;
+563;castle_eerie_wind_b.wav;22050;resident;
+564;castle_eerie_wind_c.wav;22050;resident;
+565;castle_dungeon_room_large.wav;22050;resident;
+566;castle_dungeon_room_medium.wav;22050;resident;
+567;castle_dungeon_room_small.wav;22050;resident;
+568;;11025;;
+569;;11025;;
+570;;11025;;
+571;;11025;;
+572;;11025;;
+573;;11025;;
+574;;11025;;
+575;;11025;;
+576;;11025;;
+577;;11025;;
+578;;11025;;
+579;;11025;;
+580;;11025;;
+581;;11025;;
+582;smallsnake2_death_x.wav;22050;;
+583;smallsnake2_growl.wav;22050;;
+584;smallsnake2_grunt.wav;22050;;
+585;largebarrel.wav;11025;resident;
+586;smallbarrel.wav;11025;resident;
+587;fountain1.wav;11025;;
+588;waterwheel2.wav;11025;;
+589;direction_signal.wav;11025;;
+590;light_mine.wav;11025;;
+591;torchs_and_sconces.wav;11025;;
+592;sconce_ogre.wav;11025;;
+593;dirtrise.wav;11025;;
+594;treasure.wav;11025;;
+595;rope.wav;11025;;
+596;cavelevator-start.wav;11025;;
+597;cavelevator-stop.wav;11025;;
+598;woodgears.wav;11025;;
+599;switch_large.wav;11025;;
+600;lever_medium.wav;11025;;
+601;fire_campfire_burning_logs.wav;22050;;SFX_1 TORCH FIRE
+602;stonesmove.wav;11025;;
+603;stonebutt1.wav;11025;resident;
+604;;11025;;
+605;;11025;;
+606;metal_medium_a.wav;22050;resident;
+607;metal_medium_b.wav;22050;resident;
+608;dungeon_medium_bmod1.wav;22050;resident;
+609;dungeon_medium_bbmod1.wav;22050;resident;
+610;dungeon_medium_ccmod1.wav;22050;resident;
+611;dungeon_medium_cmod3.wav;22050;resident;
+612;dungeon_medium_dmod1.wav;22050;resident;
+613;dungeon_medium_ddmod2.wav;22050;resident;
+614;dungeon_medium_emod1.wav;22050;resident;
+615;dungeon_medium_eemod2.wav;22050;resident;
+616;cobblestone_medium_a.wav;22050;resident;
+617;cobblestone_medium_aa.wav;22050;resident;
+618;cobblestone_medium_b.wav;22050;resident;
+619;cobblestone_medium_bb.wav;22050;resident;
+620;cobblestone_medium_c.wav;22050;resident;
+621;cobblestone_medium_cc.wav;22050;resident;
+622;wooden_floor_medium_a.wav;22050;resident;
+623;wooden_floor_medium_aa.wav;22050;resident;
+624;wooden_floor_medium_b.wav;22050;resident;
+625;wooden_floor_medium_bb.wav;22050;resident;
+626;carpet_medium_a.wav;22050;resident;
+627;carpet_medium_aa.wav;22050;resident;
+628;carpet_medium_b.wav;22050;resident;
+629;carpet_medium_bb.wav;22050;resident;
+630;human_m_death_02e.wav;22050;resident;"""human_male_death.wav"",11025,R,"
+631;human_m_death_02e.wav;22050;;"""human_male_wound.wav"",11025,R,"
+632;fem_hit_e1.wav;22050;resident;"""human_fem_death.wav"",11025,R,"
+633;fem_hit_e1.wav;22050;;"""human_fem_wound3.wav"",11025,R,"
+634;human_m_death_02e.wav;22050;resident;"""elf_male_wound.wav"",11025,R,"
+635;human_m_death_02e.wav;22050;;"""elf_male_wound2.wav"",11025,R,"
+636;fem_hit_e1.wav;22050;resident;"elf_female_death.wav"",11025,R,"
+637;fem_hit_e1.wav;22050;;"elf_female_wound2.wav"",11025,R,"
+638;guard_death_c.wav;22050;resident;"""dwarf_death2.wav"",11025,R,"
+639;guard_death_c.wav;22050;;"""dwarf_grunt2.wav"",11025,R,"
+640;guard_death_c.wav;22050;;"""human_fem_death.wav"",11025,R,"
+641;guard_death_c.wav;22050;;"""gnome_female_wound2.wav"",11025,R,"
+642;wolf2_attack_b.wav;22050;resident;"""whisk_male_death.wav"",11025,R,"
+643;wolf2_attack_b.wav;22050;;"""whisk_male_grunt.wav"",11025,R,"
+644;wolf2_attack_b.wav;22050;;"""whisk_male_death.wav"",11025,R,"
+645;wolf2_attack_b.wav;22050;;"""whisk_male_grunt.wav"",11025,R,"
+646;urg_death_a.wav;22050;resident;"""urgoth_death.wav"",11025,R,"
+647;urg_death_a.wav;22050;;"""urgoth_wound.wav"",11025,R,"
+648;urg_death_a.wav;22050;;"""urgoth_death.wav"",11025,R,"
+649;urg_death_a.wav;22050;;"""urgoth_wound.wav"",11025,R,"
+650;naga2_death.wav;22050;resident;"""lizard_death.wav"",11025,R,"
+651;naga2_death.wav;22050;;"""lizard_wound.wav"",11025,R,"
+652;naga2_death.wav;22050;;"""lizard_death.wav"",11025,R,"
+653;naga2_death.wav;22050;;"""lizard_wound.wav"",11025,R,"
+654;thrall_death_a.wav;22050;resident;"""guork_death.wav"",11025,R,"
+655;thrall_death_a.wav;22050;;"""guork_grunt.wav"",11025,R,"
+656;thrall_death_a.wav;22050;;"""guork_death.wav"",11025,R,"
+657;thrall_death_a.wav;22050;;"""guork_grunt.wav"",11025,R,"
+658;ratling_death2.wav;11025;;R,
+659;ratling_grunt2.wav;11025;;R,
+660;male_gasp_inside2.wav;11025;resident;
+661;male_gasp_inside3.wav;11025;resident;
+662;male_tiredbreathing2.wav;11025;resident;
+663;female_gasp_inside1.wav;11025;resident;
+664;female_gasp_inside2.wav;11025;resident;
+665;female_tiredbreathing1.wav;11025;resident;
+666;;11025;;
+667;cough_male.wav;11025;resident;
+668;cough_female.wav;11025;resident;
+669;;11025;;
+670;;11025;;
+671;;11025;;
+672;;11025;;
+673;;11025;;
+674;;11025;;
+675;group_death.wav;11025;resident;
+676;;11025;;
+677;;11025;;
+678;;11025;;
+679;female_drown.wav;11025;resident;
+680;female_lavadeath.wav;11025;resident;
+681;male_drown.wav;11025;resident;
+682;male_lavadeath.wav;11025;resident;
+683;swimming_loop.wav;11025;resident;
+684;swim_underwater_loop.wav;11025;resident;
+685;lavapool.wav;11025;resident;
+686;fall_2.wav;11025;resident;
+687;fall_4.wav;11025;resident;
+688;run_b1s1b2s2.wav;11025;resident;
+689;run_dirt_3loop.wav;11025;resident;
+690;;11025;;
+691;;11025;;
+692;;11025;;
+693;;11025;;
+694;;11025;;
+695;;11025;;
+696;spell_teleport.wav;22050;resident;
+697;spell_winds.wav;22050;resident;
+698;speech_sample.wav;22050;resident;
+699;;11025;;
+700;male_hit_e1.wav;22050;resident;
+701;male_hit_h2.wav;22050;resident;
+702;male_hit_r.wav;22050;resident;
+703;fem_hit_a.wav;22050;resident;
+704;fem_hit_b2.wav;22050;resident;
+705;fem_hit_f1.wav;22050;resident;
+706;male_hit_e1.wav;22050;resident;
+707;male_hit_h2.wav;22050;resident;
+708;male_hit_r.wav;22050;resident;
+709;fem_hit_a.wav;22050;resident;
+710;fem_hit_b2.wav;22050;resident;
+711;fem_hit_f1.wav;22050;resident;
+712;guard_wound_g.wav;22050;resident;
+713;guard_wound_f.wav;22050;resident;
+714;guard_wound_e2.wav;22050;resident;
+715;guard_wound_g.wav;22050;;R,
+716;guard_wound_f.wav;22050;;R,
+717;guard_wound_e2.wav;22050;;R,
+718;demondog1_grunt.wav;22050;resident;
+719;demondog2_grunt.wav;22050;resident;
+720;chunneler1_grunt.wav;22050;resident;
+721;demondog1_grunt.wav;22050;;R,
+722;demondog2_grunt.wav;22050;;R,
+723;chunneler1_grunt.wav;22050;;R,
+724;urg_hit_a.wav;22050;resident;
+725;urg_hit_b.wav;22050;resident;
+726;urg_hit_c.wav;22050;resident;
+727;urg_hit_a.wav;22050;;R,
+728;urg_hit_b.wav;22050;;R,
+729;urg_hit_c.wav;22050;;R,
+730;naga2_growl.wav;22050;resident;
+731;naga2_grunt.wav;22050;resident;
+732;naga2_attack.wav;22050;resident;
+733;naga2_growl.wav;22050;;R,
+734;naga2_grunt.wav;22050;;R,
+735;naga2_attack.wav;22050;;R,
+736;thrall_hit_b.wav;22050;resident;
+737;thrall_hit_c.wav;22050;resident;
+738;thrall_hit_d.wav;22050;resident;
+739;thrall_hit_b.wav;22050;;R,
+740;thrall_hit_c.wav;22050;;R,
+741;thrall_hit_d.wav;22050;;R,

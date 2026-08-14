@@ -1,0 +1,123 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dl-toolkit"
+version = "0.1.0"
+description = "Reverse-engineering and modding toolkit for the DEEP6 engine (Dungeon Lords) and the Obsidian Gate total conversion"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Sskutushev" }]
+keywords = ["deep6", "dungeon-lords", "modding", "reverse-engineering", "gamedev"]
+classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Typing :: Typed",
+]
+dependencies = [
+  "pyyaml>=6.0",
+  "typer>=0.12",
+  "rich>=13.7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2",
+  "pytest-cov>=5.0",
+  "mypy>=1.10",
+  "ruff>=0.5",
+  "types-PyYAML>=6.0",
+]
+
+[project.scripts]
+dl = "dl_toolkit.cli:app"
+
+[project.urls]
+Repository = "https://github.com/Sskutushev/My-Games"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/dl_toolkit"]
+
+# --------------------------------------------------------------------------- ruff
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = [
+  "E", "W",    # pycodestyle
+  "F",         # pyflakes
+  "I",         # isort
+  "UP",        # pyupgrade
+  "B",         # bugbear
+  "C4",        # comprehensions
+  "SIM",       # simplify
+  "PTH",       # use pathlib
+  "RUF",       # ruff-specific
+  "ANN",       # annotations
+  "TID",       # tidy imports
+]
+ignore = [
+  "ANN401",  # Any is deliberate in a few generic codec seams
+  "B905",    # zip(strict=) noise on tuple unpacking helpers
+  # Документация и сообщения об ошибках намеренно на русском; правила
+  # «неоднозначных символов» дают сплошные ложные срабатывания на кириллице.
+  "RUF001",
+  "RUF002",
+  "RUF003",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ANN201", "ANN001", "S101"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+# --------------------------------------------------------------------------- mypy
+[tool.mypy]
+python_version = "3.11"
+files = ["src", "tests"]
+strict = true
+warn_unreachable = true
+warn_return_any = true
+disallow_untyped_defs = true
+no_implicit_reexport = true
+show_error_codes = true
+pretty = true
+
+# Тесты не оформлены пакетом, поэтому имена модулей — "test_*", а не "tests.*".
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+disallow_untyped_calls = false
+disallow_untyped_decorators = false
+
+# --------------------------------------------------------------------------- pytest
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = "-q --strict-markers --strict-config"
+markers = [
+  "gamedata: requires a real DEEP6 game installation (set DL_GAME_ROOT)",
+]
+
+# --------------------------------------------------------------------------- coverage
+[tool.coverage.run]
+source = ["src/dl_toolkit"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+fail_under = 90
+exclude_lines = [
+  "pragma: no cover",
+  "if TYPE_CHECKING:",
+  "raise NotImplementedError",
+  "if __name__ == .__main__.:",
+]

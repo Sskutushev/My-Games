@@ -1,0 +1,183 @@
+﻿id;cod_offset;primitive;description;param_count
+0;0x0000;@OPENWCLOSE;Open a door, delay, then close the door;5
+1;0x002E;@LOPENWCLOSEW;Repeat: open door, wait, close door, wait, until state=0;6
+2;0x0070;@IFSTATEOPENELSECLOSE;If State=1 then open door else close door;5
+3;0x00A2;@TEXTMSG;Display A Text Message;3
+4;0x00AE;@SETWEATHER;Set Weather Conditions 0-Clear 1-Rain 2-Snow;3
+5;0x00CC;@MAKEMONSTER;Generate Monsters;9
+6;0x00E6;@GOTOBSPONLY;Teleport To BSPOnly;3
+7;0x00F4;@GOTOBSPTERR;Teleport To TerrainBSP;3
+8;0x0102;@IFSTATEOPENELSEWAITCLOSE;If State=1 then open door else wait & close door;6
+9;0x013E;@IFSTATEDBLOPENELSECLOSE;If State=1 then open double-doors else close doors;6
+10;0x0174;@RELEASEMONGROUP;Release Holding Monsters In Group;4
+11;0x0184;@SETWSTATE;Set A World State;2
+12;0x0190;@TOGGLEWSTATE;Toggle A World State;1
+13;0x019A;@SETASWITCH;Set A Switch Status;2
+14;0x01A6;@TOGGLESWITCH;Toggle A Switch Status;1
+15;0x01B0;@OBJECTEFXINIT;Trigger Efx At ObjectBase+YOffset;5
+16;0x01C2;@ENABLEBOUNDS;Enable BoundArea;1
+17;0x01CC;@DISABLEBOUNDS;Disable BoundArea;1
+18;0x01D6;@ENABLEASWITCH;Enable Switch;1
+19;0x01E0;@DISABLEASWITCH;Disable Switch;1
+20;0x01EA;@MAGICPOOL;Magic Pool;6
+21;0x01FE;@MAGICFIRE;Magic Fire;6
+22;0x0212;@TWIDDLEPROP;Twiddle A Prop;4
+23;0x0222;@CREATEITEM;Create An Item In The World;5
+24;0x0234;@ONSTATEBOUNDS;Enable/Disable BoundArea On State;2
+25;0x0252;@IFSTATEWAITOPENWAITCLOSE;If State=1 then wait & open else wait & close door;7
+26;0x0298;@ONNOTSTATEBOUNDS;Disable/Enable BoundArea (NOT) State;2
+27;0x02B6;@WAITOPENWAITCLOSE;Wait & open else wait & close door;6
+28;0x02EE;@SWITCHDDTOSEGMENT;If ALL in area then load in a New Segment, else flip switch;17
+29;0x0358;@IFSTATEDDCLOSEELSEDDOPEN;If State=1 then close door else open door;6
+30;0x038E;@OFFSWITCHDDTOSEGMENT;If ALL in area then load in a New Segment, else flip switch;17
+31;0x03F8;@IFNOTSTATEDDOPEN;If State=1 then close door else open door;6
+32;0x041C;@IFTWOSTATEOPENELSECLOSE;If !State1 exit, else if State2=1 open door : close door;6
+33;0x045C;@IFTWOSTATEDBLOPENELSECLOSE;If !State1 exit, else if State2=1 open dbl-door : close doors;7
+34;0x04A0;@SNAKEBASKET;Temple Snake Basket Dispenser;13
+35;0x04F4;@MOVEENTITY;Move Entity Limited Distance;7
+36;0x050E;@PLACEANITEM;Place USEITEM In The World At WOCCUPIED Destination;8
+37;0x0548;@EXCHANGEITEM;Exchange XITEM In The World At WOCCUPIED With ITEM;9
+38;0x0576;@IFSTATECLOSEELSEOPEN;If State=1 then close door else open door;5
+39;0x05A8;@TESTOF4IDOLS;Test 4 Idols At WOCCUPIED+n with ITEM[n];12
+40;0x05FC;@PLACEONEOFTWOITEMS;Place USEITEM In The World At WOCCUPIED Destination;11
+41;0x067C;@DESTTOOBJEFXINIT;Trigger Efx From OBASE to ObjectBase+YOffset;9
+42;0x0696;@SNAKEHEADTEST;If UseItem #1,#2,#3 then SetState/CallEvent #1,#2,#3;10
+43;0x0734;@CALLEVENTLIST;Call a list of Events;6
+44;0x0758;@SNAKELIFT;Activate snake head lift;12
+45;0x07C6;@IFNOTSTATESETSTATEELSESETSWITCH;If State==0 SetState# else SetSwitch#;5
+46;0x07E8;@IFNOTSTATEMOVETONAVPOINT;If State==0 move Monster/PC towards a NavPoint;4
+47;0x0804;@IFSTATEOPENWAITSWOFF;If State=1 then open door, wait and set switch;8
+48;0x0848;@IFSTATEDBLOPENWAITSWOFF;If State=1 then open double-doors, wait and set switch;9
+49;0x0890;@TESTOF4STATECOMBO;Test 4 states via combination if equal set state;7
+50;0x08A6;@MOVETONAVPOINT;Move Monster/PC towards a NavPoint;3
+51;0x08B4;@IFSTATEMOVETONAVPOINT;If State==1 move Monster/PC towards a NavPoint;4
+52;0x08D0;@IFSTATETELEPORT;If State==1 teleport to base destination;6
+53;0x08F0;@IFOBJINBOUNDSTATEELSESWITCH;If Object in BoundArea Set State else Reset Switch;9
+54;0x0940;@IFTWOSTATEMOVETONAVPOINT;If StateA==1 and StateB==1 move Monster/PC towards a NavPoint;5
+55;0x096A;@IFNOTTWOSTATEMOVETONAVPOINT;If StateA==0 and StateB==0 move Monster/PC towards a NavPoint;5
+56;0x0990;@IFSTATEANOTBMOVETONAVPOINT;If StateA==1 and StateB==0 move Monster/PC towards a NavPoint;5
+57;0x09BA;@ROTATETONAVPOINT;Rotate Monster/PC towards a NavPoint;2
+58;0x09C6;@IFSTATEROTATETONAVPOINT;If StateA==1 rotate Monster/PC towards a NavPoint;3
+59;0x09E0;@IFNOTSTATEROTATETONAVPOINT;If StateA==0 rotate Monster/PC towards a NavPoint;3
+60;0x09FA;@IFSTATECALLEVENT;If State==1 Call EventA;2
+61;0x0A12;@IFSTATECALLAELSECALLB;If State==1 Call EventA else Call EventB;3
+62;0x0A30;@EQUATESWITCHTOSTATE;Set SwitchStatus To WState;2
+63;0x0A3C;@EQUATESTATETOSWITCH;Set WState To SwitchStatus;2
+64;0x0A48;@IFNOTSTATECALLEVENT;If State==0 Call EventA;2
+65;0x0A60;@STATEANIMPROP;If State==1 AnimProp Set=A else AnimProp Set=B;4
+66;0x0A82;@SWAP2PROPS;Swap 2 Props' Location;2
+67;0x0A8E;@OBJECTSPELLMONSTER;World Object casts a spell on a Monster;5
+68;0x0AA0;@TEST7SWITCHES;Test 7 Switches if all==TRUE then SETSTATE;11
+69;0x0B46;@TEST6STATES;Test 6 States==TRUE then SETSTATE;8
+70;0x0BA6;@PLAYSOUND;Play A Sound Effect;1
+71;0x0BB0;@SWITCHDOORTOSEGMENT;If ALL in area then load in a New Segment, else flip switch;16
+72;0x0C16;@OFFSWITCHDOORTOSEGMENT;If ALL in area then load in a New Segment, else flip switch;16
+73;0x0C7C;@IFNOTSTATEDOOROPEN;If State=1 then close door;5
+74;0x0C9E;@IFSTATEDOOROPEN;If State=1 then open door;5
+75;0x0CC0;@IFSTATEDDOPEN;If State=1 then open door;6
+76;0x0CE4;@NOFACETONAVPOINT;Move Monster/PC towards a NavPoint WITHOUT FACING!;3
+77;0x0CF2;@DRAGONCRYSTALTEST;If UseItem #1,#2,#3 then XPoly #1,#2,#3 - ALL ON then SETSTATE;14
+78;0x0DAA;@PLACEONEEVILITEM;Place USEITEM In The World At WOCC (OCCUPIED) Destination;9
+79;0x0DEA;@PLACEONEOFFIVEITEMS;Place USEITEM In The World At WOCC (OCCUPIED) Destination;13
+80;0x0F1A;@TRANSFORMTHEMASK;Transform The Evil Masque To Enchanted Masque;2
+81;0x0F26;@TEST6OCCUPIEDS;Test 6 Occupied Spaces;9
+82;0x0F92;@PIVOTBRIDGE;If the bridge is balanced it does not teeter;6
+83;0x0FD2;@LEFFECTDELAY;Repeat: play event, wait, until state=0;3
+84;0x0FFC;@EXECTELEPORT;Teleport anyone to base destination;5
+85;0x100E;@TELEPORTMONSTER;Teleport Monster# ID to base destination;6
+86;0x1022;@CLIMBLADDER;Climb Ladder(s) Prop# ID-A ID-B ID-C ID-D;4
+87;0x1032;@DESTTOOBJSPELLINIT;Trigger SPELL From OBASE to ObjectBase+YOffset;9
+88;0x104C;@DELAYCALLEVENT;Delay, then call an event.;2
+89;0x1060;@DELAYTOGGLESTATE;Delay, then toggle a world state.;2
+90;0x1074;@IFTWOSTATEEVENTAELSEEVENTB;If State1 and State2 are true call a else call b;4
+91;0x10A6;@WAITOPENDOOR;Delay, then open a door.;5
+92;0x10C4;@SPAWNAMONSTER;Spawn one monster at a specific location;10
+93;0x10E0;@ONSTATESETNAV;If State==ON then Nav=STATUSON else Nav=STATUSOFF;5
+94;0x1106;@LCALLEVENTDELAY;Repeat: call event, wait, until state = 0;3
+95;0x1124;@TAKEOCCUPIEDITEM;Remove ITEM from the world in WOCCUPIED Space;2
+96;0x113E;@SPECIALEFFECT;Trigger EFX/SPELL At BASE location to DEST location;10
+97;0x115A;@PARTYINBOUNDS;If ALL in area then SETSTATE STATUS else SETSTATE NOTSTATUS;4
+98;0x117C;@ENTERTHETOWN;Enter a TOWN HUB;1
+99;0x1186;@CHANGEITEM2ITEM;Transform one USEITEM into another USEITEM;2
+100;0x1192;@IFISEQUIPPED;If PC has item EQUIPPED, call EVENT;2
+101;0x11AA;@IFNOTEQUIPPED;If PC does NOT have item EQUIPPED, call EVENT;2
+102;0x11C2;@IFHAVEANITEM;If PC has an ITEM, call EVENT;2
+103;0x11DA;@IFNOTHAVEITEM;If PC does NOT have an ITEM, call EVENT;2
+104;0x11F2;@TEST3STATESFALSE;Test 3 States==FALSE then SETSTATE;5
+105;0x1220;@TELEPORTPROP;Move a Prop Object To Another Location;5
+106;0x1232;@SETQUESTREG;Set A PC QuestReg value;3
+107;0x1240;@IFSTATESETQUESTREG;If STATE==TRUE then Set A PC QuestReg value;4
+108;0x125C;@IFNOTSTATESETQUESTREG;If STATE==FALSE then Set A PC QuestReg value;4
+109;0x1278;@GAMEOVER;End The Game (Play Movie Ending);2
+110;0x128C;@TESTMONEXIST;If MONREC Does NOT exist, Set WORLD STATE;3
+111;0x12A6;@DOPROPWALK;Walk a Prop Object To Another Location;6
+112;0x12BA;@GIVEPCABIL;Give PC Ability,Skill,Trait,Spell if !QFlag;3
+113;0x12C8;@IFSTATEPAINTP;If State==1 damage and teleport to base destination;9
+114;0x12F6;@IFSTATEWAITOPENWAITSWOFF;If State=1 then open door, wait and set switch;9
+115;0x1344;@IFSTATEWAITDBLOPENWAITSWOFF;If State=1 then open double-doors, wait and set switch;10
+116;0x1396;@IFSTATEWAITSWOFF;If State=1 then wait and set switch;4
+117;0x13BA;@BOARDSHIP;Board Our Starship;1
+118;0x13C2;@SWITCHTOSEGMENT;If ALL in area then load in a New Segment, else flip switch;12
+119;0x1408;@OFFSWITCHTOSEGMENT;If ALL in area then load in a New Segment, else flip switch;12
+120;0x144E;@LOADSEGMENT;If ALL PARTY in area load New Segment;9
+121;0x147E;@IFNOTSTATESETSWITCH;If State==0 Set Switch# to Status;3
+122;0x1498;@ONSTATEPROPSELECT;If State=1 then set prop select STATUSON else STATUSOFF;4
+123;0x14BA;@AREAPUSHOUT;If DOORA moving, push out MON of bound area (from center);4
+124;0x14CA;@TEST4SWITCHES;Test 4 Switches if all==TRUE then SETSTATE;6
+125;0x150E;@ADDEMITLIGHT;Add Light to Emitter Object;5
+126;0x1520;@DOPROPORBIT;Orbit a Prop Object Around A Location;8
+127;0x1538;@STOPPROP;Stop a Prop Animation;1
+128;0x1542;@SETMONVULNERABLE;Make A Monster 1=Invulnerable or 0=Vulnerable;2
+129;0x154E;@DOPROPANIM;Animate a Prop Object;2
+130;0x155A;@IFNOTSTATESETASTATE;If State==0 Set State# to Status;3
+131;0x1574;@MOONBRIDGESPAWN;Spawn Monster And MoonBridge EFX;19
+132;0x15A2;@TERROBJBOUNDYADJUST;Adjust BoundArea Y components as offset from Object Base;3
+133;0x15B0;@STATETWIDDLEPROP;Twiddle A Prop Using Values determined by State;5
+134;0x15DA;@TESTJUMPRUNES;Test up to 5 states in order and set state=STATUS if WRONG;8
+135;0x15F2;@OBJECTEMITEFXINIT;Trigger Efx At Object EmitBase to X,Z Angle;5
+136;0x1604;@IFNOTSTATEOPENELSECLOSE;If State=1 then close door else open door;5
+137;0x1636;@IFNOTSTATEONWAITOFF;If State==0 then State=1,B=0 WAIT SET State=0,B=1;5
+138;0x1672;@IFSTATESETSTATE;If StateA==1 then set StateB=STATUS;3
+139;0x168C;@CHESSMANMOVE;Move Chessman Next Move;3
+140;0x169A;@NEWITEMATTACH;Create An Item In The World At Object Attach Position;4
+141;0x16AA;@RESETCHESSPUZZLE;Reset the Chess Puzzle.;4
+142;0x16BA;@KNIGHTROOMMOVE;Check Knight Room and Set States;6
+143;0x16CE;@IFSTATEOPENWAIT2SWOFF;If State=1 then open door, wait and set switch;9
+144;0x171A;@IFAORBSETSTATEC;If StateA=1 or StateB=1 then StateC=ON else StateC=OFF;5
+145;0x1746;@IFSTATECLOSEWAIT2SWOFF;If State=1 then close door, wait and set switch;9
+146;0x1792;@SIMPLEOPENDOOR;open a door.;4
+147;0x17A6;@IFAANDBSETSTATEC;If State1=1 and State2=1 then StateC=ON else StateC=OFF;5
+148;0x17DE;@BASEDESTLIGHTBEAM;Add or End a Light Beam From Base To Dest;9
+149;0x17F8;@PROPBONELIGHTBEAM;Add or End a Light Beam Spanning Two Object Bones;7
+150;0x180E;@SETGENENCSTATUS;Set Gen Enc Status and Table#;3
+151;0x181C;@STATEROTENT;Rotate Entity While State==TRUE;5
+152;0x1832;@IFSTATETHENSTATEONELSEOFF;If State1=1 set State2=ON else State2=OFF;4
+153;0x1854;@IFANOTBSETCSETA;If StateA==1 and StateB==0 set StateC=ON and StateA=OFF;5
+154;0x1884;@IFANOTDORBSETSTATEC;If (StateA=1 and D=0) or B=1 then StateC=ON else StateC=OFF;6
+155;0x18D2;@IFASETCONELSEIFNOTBSETCOFF;If StateA=1 then StateC=ON else if NOT StateB then StateC=OFF;5
+156;0x18FE;@IFNOTAANDNOTBSETSTATEC;If State1=0 and State2=0 then StateC=ON else StateC=OFF;5
+157;0x192A;@TEST3STATESTRUE;Test 3 States==TRUE then SETSTATE;5
+158;0x1960;@LOADSTATESEGMENT;If ALL PARTY in area load New Segment and Set State;11
+159;0x1998;@TEST2SWITCHES;Test 2 Switches if all==TRUE then SETSTATE=ON ELSE OFF;5
+160;0x19D0;@IFQFLAGCALLEVENT;If PC QuestReg[FLAGNUM]==QVAL Call EventA;3
+161;0x19EA;@LOOPEFXDELAY;Repeat: play event, wait, until state=0;3
+162;0x1A08;@IFNOTASETAELSESETB;If State1=0 set State1=STATUSON else StateB=STATUSON;3
+163;0x1A2A;@ACTIVATEEVENT;Enable Event;1
+164;0x1A34;@USE1OF4ITEMS;Use 1 of 4 items,set state=STATUS, all done stateE = STATUS;10
+165;0x1B14;@USEANITEM;If have an item, take it and set STATE = STATUS;3
+166;0x1B34;@LDBLOPENWCLOSEW;Repeat: open DBL door, wait, close door, wait, until state=0;7
+167;0x1B7A;@FALLENTITY;Fall Entity Shake Rattle and Roll;20
+168;0x1C0E;@SETPROPMONCOLLIDE;Set MONSTER vs. PROP 0=collide 1=nocollide;3
+169;0x1C1C;@BLASTAREA;Blast everyone away from BASE except MONID until STATE=0;9
+170;0x1C46;@CREATEMONSTEREFX;Spawn one monster at a specific location with EFX;16
+171;0x1C7A;@SETGAMESTATUS;Set GAMESTATUS Register;2
+172;0x1C86;@SETPROPITEMOCCUPIED;Create ITEM In WOCCUPIED[] SLOT at PROPOBJ# Destination;8
+173;0x1CAE;@SETOCCUPIEDSELECT;Set SELECT=NO(0) OR YES(1) FOR g_WOccupied[] ITEM;3
+174;0x1CCA;@IFANOTBSETCONELSEOFF;If StateA==1 and StateB==0 set StateC=ON else StateC=OFF;5
+175;0x1CF6;@FORCELOADSEGMENT;Load New Segment (BoundArea IGNORED);9
+176;0x1D18;@PARTYTELEPORT;IF ALL PARTY IN AREA THEN PARTY TELEPORT;6
+177;0x1D38;@SETCRATEEXPLODE;Explode a Crate Object (Swap Model + Animate);1
+178;0x1D42;@PROPSOUND;Play An OBJECT Sound Effect;2
+179;0x1D4E;@IFANOTBSETCONLY;If StateA==1 and StateB==0 set StateC=STATUS;4
+180;0x1D76;@IFNOTSTATEONQUESTCALLEVENT;IF NOT STATE & PC QuestReg[FLAGNUM]==QVAL Call Event, SETSTATE;5
+181;0x1DA6;@LOADXSEGMENT;If ALL PARTY in area load New Segment and SET STATE=STATUS;-1010
