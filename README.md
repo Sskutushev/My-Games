@@ -105,9 +105,22 @@ cli          пользовательский интерфейс
 ## Документация
 
 - [`docs/DEEP6_ENGINE_REPORT.md`](docs/DEEP6_ENGINE_REPORT.md) — полный технический разбор движка
+- [`docs/ENGINE_LIMITS.md`](docs/ENGINE_LIMITS.md) — **разбор кода загрузчиков: какие таблицы расширяемы**
 - [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) — архитектура тулкита и принципы
+- [`docs/DATA_ARCHITECTURE.md`](docs/DATA_ARCHITECTURE.md) — современный стек и слоёные БД: что уместно, что нет
 - [`docs/OBSIDIAN_GATE_GDD.md`](docs/OBSIDIAN_GATE_GDD.md) — дизайн-документ новой игры
-- [`docs/CONTENT_BUDGET.md`](docs/CONTENT_BUDGET.md) — измеренная ёмкость таблиц и что из неё следует
+- [`docs/CONTENT_BUDGET.md`](docs/CONTENT_BUDGET.md) — измеренная ёмкость таблиц
+
+### Главное открытие
+
+`D6ITEM.DAT` движком **не читается**: в `dlords.exe` нет такой строки. Настоящая
+таблица предметов вкомпилирована в функцию `MakeITEMS()` — 948 записей по 204
+байта в статическом массиве `0x030DF40C`, заполняемых 20 000 инструкций.
+Индекс записи соответствует `iname.dat` как `iname_id = index + 1`.
+
+Это закрывает противоречие, которое числилось нерешённым во всех предыдущих
+отчётах: моста между `iname.dat` и `D6ITEM.DAT` нет, потому что `D6ITEM.DAT` —
+не таблица предметов, а данные более ранней версии движка.
 
 ---
 

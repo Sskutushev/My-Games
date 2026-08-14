@@ -108,9 +108,9 @@ TableSpec("D6ITEM.DAT", 284, 22, 22, 858, "предметы, экипировк�
 `content/models.py` кодирует ограничения движка константами:
 
 ```python
-RACE_SLOTS = 16      # rd6string.dat 1300-1315
-CLASS_SLOTS = 35     # rd6string.dat 1400-1434
-SKILL_SLOTS = 45     # rd6string.dat 1800-1844
+RACE_SLOTS = 16  # rd6string.dat 1300-1315
+CLASS_SLOTS = 35  # rd6string.dat 1400-1434
+SKILL_SLOTS = 45  # rd6string.dat 1800-1844
 ```
 
 Свод правил новой игры валидируется против них при загрузке. Тест
