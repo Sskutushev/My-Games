@@ -113,52 +113,55 @@ def test_layout_constants_are_consistent():
     assert ITEM_STRIDE == 204
 
 
-def test_item_table_grouping():
-    table = ItemTable(
-        [
-            FieldWrite(ITEM_ARRAY_BASE + 4, 0, 4, 2, 7, 0x1000),
-            FieldWrite(ITEM_ARRAY_BASE + 0, 0, 0, 4, None, 0x1005, source_string="PUNCH"),
-            FieldWrite(ITEM_ARRAY_BASE + ITEM_STRIDE, 1, 0, 4, 3, 0x100A),
-        ]
-    )
-    assert table.indices() == [0, 1]
-    assert [w.field_offset for w in table.by_item(0)] == [0, 4]
-    assert table.field_usage() == {0: 2, 4: 1}
-    assert table.strings_for(0) == ["PUNCH"]
+def test_field_write_patchability():
+    immediate = FieldWrite(0, 60, 4, 750, 0x1000, "imm")
+    from_register = FieldWrite(0, 32, 2, 4, 0x1010, "reg")
+    assert immediate.patchable
+    assert not from_register.patchable
+
+
+def test_item_table_accessors_and_bounds():
+    table = ItemTable()
+    table.memory[60:64] = (750).to_bytes(4, "little")
+    table.memory[ITEM_STRIDE : ITEM_STRIDE + 5] = b"AXE\x00\x00"
+    table.writes.append(FieldWrite(0, 60, 4, 750, 0x1000, "imm"))
+
+    assert table.value(0, "price") == 750
+    assert table.value(0, 60) == 750
+    assert table.name(1) == "AXE"
+    assert table.defined_indices() == [1]
+    assert table.writes_for(0, 60)[0].value == 750
+    assert table.writes_for(0, 40) == []
+    assert table.as_dict(1)["iname_id"] == 2
+
+    with pytest.raises(IndexError, match="вне 0"):
+        table.raw(ITEM_COUNT)
+    with pytest.raises(KeyError, match="неизвестное поле"):
+        table.value(0, "нет_такого")
+    # неизвестное числовое смещение допускается как поле шириной 2
+    assert table.value(0, 150) == 0
 
 
 def test_extract_on_synthetic_makeitems():
-    """Синтетический MakeITEMS: две записи в массив предметов и строка из .rdata."""
+    """Синтетический MakeITEMS: непосредственное значение и значение из регистра."""
     pytest.importorskip("capstone")
 
-    name_va = IMAGE_BASE + 0x2000
     code = bytearray()
-    # mov dword ptr [ITEM_ARRAY_BASE], 0x2A
-    code += b"\xc7\x05" + struct.pack("<I", ITEM_ARRAY_BASE) + struct.pack("<I", 0x2A)
-    # mov eax, dword ptr [name_va]   — загрузка строки
-    code += b"\xa1" + struct.pack("<I", name_va)
-    # mov dword ptr [ITEM_ARRAY_BASE + STRIDE + 8], eax
-    code += b"\xa3" + struct.pack("<I", ITEM_ARRAY_BASE + ITEM_STRIDE + 8)
-    code += b"\xc3"  # ret
+    # mov dword ptr [BASE + 60], 0x2A   — цена, непосредственный операнд
+    code += b"\xc7\x05" + struct.pack("<I", ITEM_ARRAY_BASE + 60) + struct.pack("<I", 0x2A)
+    # mov bp, 4 ; mov word ptr [BASE + STRIDE + 32], bp — тип через регистр
+    code += b"\x66\xbd" + struct.pack("<H", 4)
+    code += b"\x66\x89\x2d" + struct.pack("<I", ITEM_ARRAY_BASE + ITEM_STRIDE + 32)
+    code += b"\xc3"
 
     text_rva = MAKEITEMS_VA - IMAGE_BASE
-    image = PeImage.parse(
-        build_pe(
-            [
-                (".text", text_rva, len(code) + 16, bytes(code)),
-                (".rdata", 0x2000, 0x20, b"PUNCH\x00" + b"\x00" * 10),
-            ]
-        )
-    )
+    image = PeImage.parse(build_pe([(".text", text_rva, len(code) + 16, bytes(code))]))
     table = extract(image)
-    assert table.indices() == [0, 1]
 
-    first = table.by_item(0)[0]
-    assert (first.field_offset, first.width, first.value) == (0, 4, 0x2A)
-
-    second = table.by_item(1)[0]
-    assert second.field_offset == 8
-    assert second.source_string == "PUNCH"
+    assert table.value(0, "price") == 0x2A
+    assert table.value(1, "type") == 4
+    kinds = {w.kind for w in table.writes}
+    assert kinds == {"imm", "reg"}
 
 
 def test_extract_rejects_image_without_makeitems():
@@ -182,10 +185,11 @@ def test_real_exe_contains_item_table(real_game: GameRoot):
     image = PeImage.parse(real_game.read("dlords.exe"))
     table = extract(image)
 
-    indices = table.indices()
+    assert table.instructions > 19_000
+    assert len(table.writes) > 10_000
+    indices = {write.item_index for write in table.writes}
     assert min(indices) == 0
     assert max(indices) == ITEM_COUNT - 1
-    assert len(table.writes) > 10_000
 
     # iname.dat объявляет ровно столько же предметов
     from dl_toolkit.codecs import StringTableCodec
@@ -197,7 +201,8 @@ def test_real_exe_contains_item_table(real_game: GameRoot):
     lookup = names.as_dict()
     assert lookup[1] == "PUNCH"
     assert lookup[4] == "CHAIN BOOTS"
-    assert "CHAIN BOOTS" in " ".join(table.strings_for(3))
+    assert table.name(0) == "PUNCH"
+    assert table.name(3) == "CHAIN BOOTS"
 
 
 @pytest.mark.gamedata

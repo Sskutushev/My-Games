@@ -1,0 +1,27 @@
+# Пример плана патчей характеристик предметов.
+#
+# Применение:
+#   dl items-patch data/obsidian_gate/item_patches.example.yaml            # сухой прогон
+#   dl items-patch data/obsidian_gate/item_patches.example.yaml --write    # запись
+#
+# Предмет задаётся либо индексом в таблице exe, либо внутренним именем.
+# Имя удобнее: индексы смотреть через `dl items --find <подстрока>`.
+#
+# Патчатся только поля, записанные непосредственным операндом. Поля, значение
+# которых приходит через регистр, разделяются несколькими предметами и
+# отклоняются с явной ошибкой.
+#
+# Доступные поля: type, slot, weapon_class, icon, icon_alt, model, model_flag,
+# armor, price, hands, skill, reach, damage, tier и field_* для неопознанных.
+
+patches:
+  # Катана стоит как средний меч, хотя по урону — верхняя середина.
+  # Выравниваем цену под серию: KATANA +1 стоит 2500.
+  - name: KATANA
+    field: price
+    value: 2000
+
+  # Короткий лук слишком дёшев для стартового дальнобойного оружия.
+  - name: SHORT BOW
+    field: price
+    value: 120

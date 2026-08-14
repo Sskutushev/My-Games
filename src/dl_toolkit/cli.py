@@ -12,6 +12,7 @@ from rich.table import Table
 from dl_toolkit import __version__
 from dl_toolkit.content import ClassTier, load_ruleset
 from dl_toolkit.game import GameNotFoundError, GameRoot
+from dl_toolkit.itemtab import ITEM_COUNT
 from dl_toolkit.verify import summarize, verify_all
 
 app = typer.Typer(
@@ -182,6 +183,152 @@ def migrate(
             yaml.safe_dump(updated, allow_unicode=True, sort_keys=False, width=100), "utf-8"
         )
         console.print(f"[green]записано: {path}[/green]")
+    else:
+        console.print("[yellow]сухой прогон; повторите с --write[/yellow]")
+
+
+@app.command()
+def items(
+    game: GameOption = None,
+    csv_out: Annotated[
+        Path | None, typer.Option("--csv", help="Выгрузить таблицу предметов в CSV.")
+    ] = None,
+    find: Annotated[
+        str | None, typer.Option("--find", help="Показать предметы, чьё имя содержит подстроку.")
+    ] = None,
+) -> None:
+    """Извлечь таблицу предметов из ``dlords.exe``.
+
+    Таблица не лежит в файлах данных: она вкомпилирована в функцию ``MakeITEMS``.
+    """
+    import csv as csv_module
+
+    from dl_toolkit.itemtab import FIELDS, extract
+    from dl_toolkit.pe import PeImage
+
+    root = _root(game)
+    table = extract(PeImage.parse(root.read("dlords.exe")))
+    defined = table.defined_indices()
+
+    console.print(
+        f"разобрано инструкций {table.instructions}, присваиваний {len(table.writes)}, "
+        f"нераспознанных {table.unresolved}"
+    )
+    console.print(f"записей с характеристиками: {len(defined)} из {ITEM_COUNT}")
+
+    if csv_out is not None:
+        columns = ["index", "iname_id", "name", *[s.key for s in FIELDS if s.key != "name"]]
+        with csv_out.open("w", newline="", encoding="utf-8-sig") as handle:
+            writer = csv_module.DictWriter(handle, fieldnames=columns, delimiter=";")
+            writer.writeheader()
+            for index in defined:
+                writer.writerow(table.as_dict(index))
+        console.print(f"[green]записано: {csv_out} ({len(defined)} строк)[/green]")
+
+    if find:
+        needle = find.upper()
+        grid = Table(title=f"Предметы, содержащие {find!r}")
+        for column in ("idx", "iname", "имя", "тип", "цена", "навык", "урон", "защита"):
+            grid.add_column(column)
+        for index in defined:
+            name = table.name(index)
+            if needle in name.upper():
+                grid.add_row(
+                    str(index),
+                    str(index + 1),
+                    name,
+                    str(table.value(index, "type")),
+                    str(table.value(index, "price")),
+                    str(table.value(index, "skill")),
+                    str(table.value(index, "damage")),
+                    str(table.value(index, "armor")),
+                )
+        console.print(grid)
+
+
+@app.command("items-patch")
+def items_patch(
+    plan: Annotated[Path, typer.Argument(help="YAML со списком патчей.")],
+    game: GameOption = None,
+    write: Annotated[
+        bool, typer.Option("--write", help="Записать изменённый dlords.exe (иначе сухой прогон).")
+    ] = False,
+) -> None:
+    """Изменить характеристики предметов в ``dlords.exe``.
+
+    Формат плана::
+
+        patches:
+          - index: 460      # или name: KATANA
+            field: price
+            value: 7777
+
+    Патч правит непосредственный операнд инструкции: длина не меняется,
+    перемещений нет. Оригинал сохраняется в ``.dl_backup/`` до записи.
+    """
+    import yaml
+
+    from dl_toolkit.itempatch import ItemPatch, PatchError, apply_patches, verify_patches
+    from dl_toolkit.itemtab import extract
+    from dl_toolkit.pe import PeImage
+
+    root = _root(game)
+    image = PeImage.parse(root.read("dlords.exe"))
+    table = extract(image)
+    by_name = {table.name(i): i for i in table.defined_indices()}
+
+    document = yaml.safe_load(plan.read_text("utf-8")) or {}
+    requests: list[ItemPatch] = []
+    for entry in document.get("patches", []):
+        index = entry.get("index")
+        if index is None:
+            name = entry.get("name")
+            if name not in by_name:
+                console.print(f"[red]предмет {name!r} не найден в таблице[/red]")
+                raise typer.Exit(code=1)
+            index = by_name[name]
+        requests.append(
+            ItemPatch(index=int(index), field=entry["field"], value=int(entry["value"]))
+        )
+
+    if not requests:
+        console.print("[yellow]в плане нет патчей[/yellow]")
+        return
+
+    try:
+        patched, applied = apply_patches(image, requests)
+    except PatchError as exc:
+        console.print(f"[red]{exc}[/red]")
+        raise typer.Exit(code=1) from exc
+
+    grid = Table(title="План патчей")
+    for column in ("предмет", "поле", "было", "станет", "смещение", "инструкция"):
+        grid.add_column(column)
+    for entry in applied:
+        grid.add_row(
+            f"{entry.patch.index} {table.name(entry.patch.index)}",
+            entry.patch.field,
+            str(entry.old_value),
+            str(entry.new_value),
+            f"0x{entry.file_offset:X}",
+            f"0x{entry.instruction_va:08X}",
+        )
+    console.print(grid)
+
+    problems = verify_patches(patched, requests)
+    if problems:
+        console.print("[red]проверка не прошла:[/red]")
+        for problem in problems:
+            console.print(f"  {problem}")
+        raise typer.Exit(code=1)
+    console.print("[green]проверка повторным разбором образа: пройдена[/green]")
+
+    changed = sum(1 for before, after in zip(image.data, patched) if before != after)
+    console.print(f"изменяется байт: {changed}")
+
+    if write:
+        root.write("dlords.exe", patched)
+        console.print("[green]dlords.exe записан, оригинал в .dl_backup/[/green]")
     else:
         console.print("[yellow]сухой прогон; повторите с --write[/yellow]")
 

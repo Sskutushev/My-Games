@@ -1,109 +1,239 @@
 """Таблица предметов, вкомпилированная в ``dlords.exe``.
 
-Открытие, меняющее всю картину моддинга: **`D6ITEM.DAT` движком не читается.**
-В образе нет ни строки ``D6ITEM.DAT``, ни какой-либо строки с ``ITEM.DAT``.
-Настоящая таблица предметов строится функцией ``MakeITEMS()``
-(VA ``0x004ED670``, ~116 КБ кода, около 20 000 инструкций), которая инициализирует
-статический массив по адресу ``0x030DF40C`` серией непосредственных записей::
+**`D6ITEM.DAT` движком не читается.** В образе нет ни строки ``D6ITEM``, ни
+``ITEM.DAT``. Настоящая таблица строится функцией ``MakeITEMS()``
+(VA ``0x004ED670``, ~116 КБ кода, 19 984 инструкции), которая заполняет
+статический массив ``0x030DF40C`` непосредственными записями::
 
-    mov  dword ptr [0x030DF48A], 2          ; поле записи 0
-    mov  word  ptr [0x030DF4F8], bp         ; поле записи 1
-    mov  ecx,  dword ptr [0x0065BA6C]       ; "CHAIN MITTENS" из .rdata
-    mov  dword ptr [0x030DF5A4], ecx        ; имя записи 2
+    mov  ecx, dword ptr [0x0065BA6C]   ; "CHAIN MITTENS" из .rdata
+    mov  dword ptr [0x030DF5A4], ecx   ; имя записи 2
+    mov  word  ptr [0x030DF5CC], 0x68  ; иконка записи 3
+    mov  bp, 1                          ; часть значений идёт через регистры
+    mov  word  ptr [0x030DF4F8], bp
 
-Параметры массива, полученные разбором функции:
+Значения пишутся и напрямую, и через регистры, поэтому восстановление требует
+пропагации констант по линейному коду функции. Без неё теряется около 60 %
+полей.
 
-* база ``0x030DF40C``, шаг записи **204** байта, записей **948** (индексы 0..947);
-* индекс записи в exe соответствует ``iname.dat`` как ``iname_id = index + 1``
-  (проверено: PUNCH → 1, BAT BITE → 2, CHAIN MITTENS → 3, CHAIN BOOTS → 4).
+Раскладка массива, полученная разбором:
 
-Практические следствия:
+============  =========================================================
+База          ``0x030DF40C``
+Шаг записи    204 байта
+Записей       948 (индексы 0…947)
+Соответствие  ``iname.dat`` id = индекс + 1
+============  =========================================================
 
-* редактирование ``D6ITEM.DAT`` не влияет ни на что;
-* переименование предметов работает через ``iname.dat`` без патча exe;
-* изменение характеристик требует правки непосредственных операндов внутри
-  ``MakeITEMS``. Длина инструкции при этом не меняется, перемещений нет —
-  патч механический и обратимый.
+Соответствие проверено строго: из 510 записей, где имя задано в коде, **510
+совпали** с ``iname.dat[idx + 1]``. Соседние сдвиги дают 13–16 совпадений, то
+есть случайный шум.
 
-Модуль извлекает таблицу из образа и раскладывает по индексам предметов.
+Оставшиеся 438 записей код не трогает вообще — они остаются нулевыми. Это
+алхимические реагенты и рунные камни (``BAT WING``, ``RAT TAIL``, ``AENIR``…),
+которым характеристики не нужны. Второго инициализатора в образе нет: сканирование
+всей секции ``.text`` находит обращения к массиву только внутри ``MakeITEMS`` и
+в 99 мелких местах, читающих отдельные предметы в рантайме.
 """
 
 from __future__ import annotations
 
 import re
 from dataclasses import dataclass, field
+from enum import IntEnum
 
 from dl_toolkit.pe import PeImage
 
-#: Адрес и раскладка статического массива предметов.
 ITEM_ARRAY_BASE = 0x030DF40C
 ITEM_STRIDE = 204
 ITEM_COUNT = 948
 MAKEITEMS_VA = 0x004ED670
+NAME_SIZE = 32
 
-_ABS_OPERAND = re.compile(r"\[(0x[0-9a-f]+)\]")
-_IMM_OPERAND = re.compile(r",\s*(0x[0-9a-f]+|\d+)$")
+_REG32 = frozenset({"eax", "ebx", "ecx", "edx", "esi", "edi", "ebp", "esp"})
+_SUBREG = {
+    "ax": "eax", "bx": "ebx", "cx": "ecx", "dx": "edx",
+    "si": "esi", "di": "edi", "bp": "ebp",
+    "al": "eax", "bl": "ebx", "cl": "ecx", "dl": "edx",
+    "ah": "eax", "bh": "ebx", "ch": "ecx", "dh": "edx",
+}  # fmt: skip
+_WIDTH = {"byte": 1, "word": 2, "dword": 4}
+_ABSOLUTE = re.compile(r"\[(0x[0-9a-f]+)\]$")
+_LITERAL = re.compile(r"^(0x[0-9a-f]+|\d+)$")
+#: Инструкции, после которых значение регистра-приёмника перестаёт быть известным.
+_CLOBBER = frozenset(
+    {"or", "and", "add", "sub", "lea", "imul", "shl", "shr", "inc", "dec", "movsx", "movzx"}
+)
 
-_WIDTH_BY_PREFIX = {"byte": 1, "word": 2, "dword": 4, "qword": 8}
+
+class ItemType(IntEnum):
+    """Значения поля ``+32``. Выведены группировкой 510 именованных записей."""
+
+    UNTYPED = 0
+    WEAPON = 1
+    AMMO = 3
+    ARMOR = 4
+    SHIELD = 5
+    SPECIAL = 6
+    POTION = 8
+    GOLD = 14
+    DOCUMENT = 15
+    ACCESSORY = 17
+    LOCKPICK = 20
+
+
+class EquipSlot(IntEnum):
+    """Значения поля ``+34`` для брони."""
+
+    TORSO = 0
+    LEGS = 1
+    HANDS = 3
+    FEET = 4
+    HEAD = 5
+    HAIR = 6
+    SHOULDERS = 7
+    RIGHT_SHOULDER = 8
+    LEFT_SHOULDER = 9
+
+
+@dataclass(frozen=True, slots=True)
+class FieldSpec:
+    """Описание поля записи предмета."""
+
+    offset: int
+    width: int
+    key: str
+    title: str
+    confidence: str
+    note: str = ""
+
+
+#: Семантика полей. ``confidence``: ``high`` — подтверждено группировкой и
+#: перекрёстной проверкой, ``medium`` — согласуется с примерами, ``low`` — гипотеза.
+FIELDS: tuple[FieldSpec, ...] = (
+    FieldSpec(0, NAME_SIZE, "name", "внутреннее имя", "high", "ASCII, совпадает с iname.dat"),
+    FieldSpec(32, 2, "type", "тип предмета", "high", "см. ItemType"),
+    FieldSpec(34, 2, "slot", "слот экипировки", "high", "см. EquipSlot; для оружия — иное"),
+    FieldSpec(36, 2, "weapon_class", "класс оружия", "medium", "1 одноручное, 2 двуручное"),
+    FieldSpec(40, 2, "icon", "иконка", "high", "индекс в interface/icons"),
+    FieldSpec(42, 2, "icon_alt", "вторая иконка", "medium", "встречается у украшений"),
+    FieldSpec(44, 2, "model", "модель", "high", "индекс модели GR2"),
+    FieldSpec(46, 2, "model_flag", "флаг модели", "low"),
+    FieldSpec(58, 2, "armor", "защита", "medium", "у брони и щитов"),
+    FieldSpec(60, 4, "price", "цена", "high", "1…500000, медиана 2500 у оружия"),
+    FieldSpec(68, 2, "hands", "занимаемые руки", "medium", "2 у двуручного"),
+    FieldSpec(72, 2, "skill", "требуемый навык", "high", "id навыка 1800+N"),
+    FieldSpec(78, 4, "reach", "дальность", "medium", "фикс. точка /1024: 1280=1.25, 2560=2.5"),
+    FieldSpec(96, 2, "field_96", "неизвестно", "low"),
+    FieldSpec(106, 2, "field_106", "неизвестно", "low"),
+    FieldSpec(108, 2, "field_108", "неизвестно", "low"),
+    FieldSpec(110, 2, "damage", "урон", "medium", "меч 12–18, двуручник 36, лук 10"),
+    FieldSpec(118, 2, "tier", "класс качества", "low", "1…3"),
+)
+
+FIELDS_BY_KEY: dict[str, FieldSpec] = {spec.key: spec for spec in FIELDS}
 
 
 @dataclass(frozen=True, slots=True)
 class FieldWrite:
-    """Одна непосредственная запись в поле предмета."""
+    """Одна запись в поле предмета, найденная в коде."""
 
-    address: int
     item_index: int
     field_offset: int
     width: int
-    value: int | None
+    value: int
     instruction_va: int
-    source_string: str | None = None
+    #: ``imm`` — значение в операнде инструкции (патчится); ``reg`` — пришло из регистра.
+    kind: str
+
+    @property
+    def patchable(self) -> bool:
+        """Можно ли изменить значение, не меняя длину инструкции."""
+        return self.kind == "imm"
 
 
 @dataclass(slots=True)
 class ItemTable:
     """Реконструированная таблица предметов."""
 
+    memory: bytearray = field(default_factory=lambda: bytearray(ITEM_COUNT * ITEM_STRIDE))
     writes: list[FieldWrite] = field(default_factory=list)
+    instructions: int = 0
+    unresolved: int = 0
 
-    def indices(self) -> list[int]:
-        return sorted({write.item_index for write in self.writes})
+    # ------------------------------------------------------------------ чтение
+    def raw(self, index: int) -> bytes:
+        self._check(index)
+        return bytes(self.memory[index * ITEM_STRIDE : (index + 1) * ITEM_STRIDE])
 
-    def by_item(self, index: int) -> list[FieldWrite]:
-        return sorted(
-            (w for w in self.writes if w.item_index == index), key=lambda w: w.field_offset
-        )
+    def name(self, index: int) -> str:
+        chunk = self.raw(index)[:NAME_SIZE]
+        end = chunk.find(b"\x00")
+        return chunk[: end if end >= 0 else NAME_SIZE].decode("cp1251", "replace")
 
-    def field_usage(self) -> dict[int, int]:
-        """Сколько предметов трогает каждое смещение поля — подсказка о семантике."""
-        usage: dict[int, int] = {}
-        for write in self.writes:
-            usage[write.field_offset] = usage.get(write.field_offset, 0) + 1
-        return dict(sorted(usage.items()))
+    def value(self, index: int, key_or_offset: str | int) -> int:
+        """Значение поля по ключу из :data:`FIELDS` или по числовому смещению."""
+        spec = self._spec(key_or_offset)
+        base = index * ITEM_STRIDE + spec.offset
+        self._check(index)
+        return int.from_bytes(self.memory[base : base + spec.width], "little")
 
-    def strings_for(self, index: int) -> list[str]:
-        return [w.source_string for w in self.by_item(index) if w.source_string]
+    def defined_indices(self) -> list[int]:
+        """Записи, у которых задано имя — то есть реально описанные предметы."""
+        return [i for i in range(ITEM_COUNT) if self.name(i)]
+
+    def writes_for(self, index: int, offset: int) -> list[FieldWrite]:
+        return [w for w in self.writes if w.item_index == index and w.field_offset == offset]
+
+    def as_dict(self, index: int) -> dict[str, int | str]:
+        row: dict[str, int | str] = {
+            "index": index,
+            "iname_id": index + 1,
+            "name": self.name(index),
+        }
+        for spec in FIELDS:
+            if spec.key != "name":
+                row[spec.key] = self.value(index, spec.key)
+        return row
+
+    # ------------------------------------------------------------------ служебное
+    @staticmethod
+    def _check(index: int) -> None:
+        if not 0 <= index < ITEM_COUNT:
+            raise IndexError(f"индекс предмета {index} вне 0..{ITEM_COUNT - 1}")
+
+    @staticmethod
+    def _spec(key_or_offset: str | int) -> FieldSpec:
+        if isinstance(key_or_offset, str):
+            spec = FIELDS_BY_KEY.get(key_or_offset)
+            if spec is None:
+                raise KeyError(f"неизвестное поле {key_or_offset!r}")
+            return spec
+        for spec in FIELDS:
+            if spec.offset == key_or_offset:
+                return spec
+        return FieldSpec(key_or_offset, 2, f"field_{key_or_offset}", "неизвестно", "low")
 
 
-def _decode_target(operand: str) -> tuple[int, int] | None:
-    """Из операнда вида ``dword ptr [0x30df48a]`` вернуть (адрес, ширина)."""
-    match = _ABS_OPERAND.search(operand)
+def _register(operand: str) -> str | None:
+    name = operand.strip()
+    if name in _REG32:
+        return name
+    return _SUBREG.get(name)
+
+
+def _absolute(operand: str) -> tuple[int, int] | None:
+    match = _ABSOLUTE.search(operand)
     if not match:
         return None
-    address = int(match.group(1), 16)
-    width = 4
-    for prefix, size in _WIDTH_BY_PREFIX.items():
-        if operand.startswith(prefix):
-            width = size
-            break
-    return address, width
+    width = _WIDTH.get(operand.split()[0], 4)
+    return int(match.group(1), 16), width
 
 
 def extract(image: PeImage, *, max_instructions: int = 40_000) -> ItemTable:
-    """Разобрать ``MakeITEMS`` и собрать все записи в массив предметов.
+    """Разобрать ``MakeITEMS`` и восстановить таблицу предметов.
 
-    Требует ``capstone``. Функция линейная, без ветвлений внутрь, поэтому
-    линейного прохода до первого ``ret`` достаточно.
+    Выполняется линейный проход с пропагацией констант: функция не содержит
+    ветвлений внутрь, поэтому прохода до первого ``ret`` достаточно.
     """
     try:
         from capstone import CS_ARCH_X86, CS_MODE_32, Cs
@@ -117,48 +247,76 @@ def extract(image: PeImage, *, max_instructions: int = 40_000) -> ItemTable:
     disassembler = Cs(CS_ARCH_X86, CS_MODE_32)
     table = ItemTable()
     limit = ITEM_ARRAY_BASE + ITEM_COUNT * ITEM_STRIDE
-    pending_string: str | None = None
-    count = 0
+    registers: dict[str, int] = {}
 
     for instruction in disassembler.disasm(image.data[start : start + 400_000], MAKEITEMS_VA):
-        count += 1
-        if count > max_instructions or instruction.mnemonic == "ret":
+        table.instructions += 1
+        if table.instructions > max_instructions or instruction.mnemonic == "ret":
             break
-        if instruction.mnemonic != "mov":
-            continue
 
+        mnemonic = instruction.mnemonic
         destination, _, source = instruction.op_str.partition(", ")
 
-        # Загрузка константной строки из .rdata: запоминаем до следующей записи.
-        if not destination.startswith(("byte", "word", "dword", "qword")):
-            loaded = _decode_target(source)
-            if loaded:
-                pending_string = image.read_cstring(loaded[0])
+        if mnemonic == "xor" and destination == source:
+            register = _register(destination)
+            if register:
+                registers[register] = 0
             continue
 
-        target = _decode_target(destination)
+        if mnemonic in _CLOBBER:
+            register = _register(destination)
+            if register:
+                registers.pop(register, None)
+            continue
+
+        if mnemonic != "mov":
+            continue
+
+        register = _register(destination)
+        if register is not None:
+            if _LITERAL.match(source):
+                registers[register] = int(source, 0)
+                continue
+            loaded = _absolute(source)
+            if loaded is None:
+                registers.pop(register, None)
+                continue
+            offset = image.to_offset(loaded[0])
+            if offset is None:
+                registers.pop(register, None)
+            else:
+                registers[register] = int.from_bytes(
+                    image.data[offset : offset + loaded[1]], "little"
+                )
+            continue
+
+        target = _absolute(destination)
         if target is None:
             continue
         address, width = target
         if not ITEM_ARRAY_BASE <= address < limit:
-            pending_string = None
             continue
 
-        relative = address - ITEM_ARRAY_BASE
-        immediate = _IMM_OPERAND.search(instruction.op_str)
-        value = int(immediate.group(1), 0) if immediate else None
+        if _LITERAL.match(source):
+            value, kind = int(source, 0), "imm"
+        else:
+            source_register = _register(source)
+            if source_register is None or source_register not in registers:
+                table.unresolved += 1
+                continue
+            value, kind = registers[source_register] & ((1 << (8 * width)) - 1), "reg"
 
+        relative = address - ITEM_ARRAY_BASE
+        table.memory[relative : relative + width] = value.to_bytes(width, "little")
         table.writes.append(
             FieldWrite(
-                address=address,
                 item_index=relative // ITEM_STRIDE,
                 field_offset=relative % ITEM_STRIDE,
                 width=width,
                 value=value,
                 instruction_va=instruction.address,
-                source_string=pending_string,
+                kind=kind,
             )
         )
-        pending_string = None
 
     return table
